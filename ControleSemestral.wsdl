@@ -1,0 +1,2246 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://endpoint.ws.sisagua.saude.gov.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ControleSemestralWs" targetNamespace="http://endpoint.ws.sisagua.saude.gov.br/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://endpoint.ws.sisagua.saude.gov.br/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://endpoint.ws.sisagua.saude.gov.br/">
+<xs:element name="amostraAnalisadaVo" type="tns:amostraAnalisadaVo"/>
+<xs:element name="amostraColetaVo" type="tns:amostraColetaVo"/>
+<xs:element name="amostraForaPadraoVo" type="tns:amostraForaPadraoVo"/>
+<xs:element name="amostraVo" type="tns:amostraVo"/>
+<xs:element name="analiseNovaNormaSAASistDistribuicaVo" type="tns:analiseNovaNormaSAASistDistribuicaVo"/>
+<xs:element name="analiseNovaNormaSAAVo" type="tns:analiseNovaNormaSAAVo"/>
+<xs:element name="analiseNovaNormaVo" type="tns:analiseNovaNormaVo"/>
+<xs:element name="analiseVo" type="tns:analiseVo"/>
+<xs:element name="areaAbastecidaVo" type="tns:areaAbastecidaVo"/>
+<xs:element name="campoAmostraColetaVo" type="tns:campoAmostraColetaVo"/>
+<xs:element name="carroPipaVo" type="tns:carroPipaVo"/>
+<xs:element name="coletaAmostraVo" type="tns:coletaAmostraVo"/>
+<xs:element name="controleEtaVO" type="tns:controleEtaVO"/>
+<xs:element name="controleInfraEstruturaVo" type="tns:controleInfraEstruturaVo"/>
+<xs:element name="controleMensalVo" type="tns:controleMensalVo"/>
+<xs:element name="controlePeriodoVo" type="tns:controlePeriodoVo"/>
+<xs:element name="controleSaaMensalVo" type="tns:controleSaaMensalVo"/>
+<xs:element name="controleSacMensalVo" type="tns:controleSacMensalVo"/>
+<xs:element name="controleSemestralVo" type="tns:controleSemestralVo"/>
+<xs:element name="controleVo" type="tns:controleVo"/>
+<xs:element name="empresaEnviarControleSaaSemestral" type="tns:empresaEnviarControleSaaSemestral"/>
+<xs:element name="empresaEnviarControleSaaSemestralResponse" type="tns:empresaEnviarControleSaaSemestralResponse"/>
+<xs:element name="empresaEnviarControleSacSemestral" type="tns:empresaEnviarControleSacSemestral"/>
+<xs:element name="empresaEnviarControleSacSemestralResponse" type="tns:empresaEnviarControleSacSemestralResponse"/>
+<xs:element name="etaEmpresaVo" type="tns:etaEmpresaVo"/>
+<xs:element name="etaErro" nillable="true" type="xs:anyType"/>
+<xs:element name="etaSAAVo" type="tns:controleEtaSemestralSaaVo"/>
+<xs:element name="etaSACVo" nillable="true" type="xs:anyType"/>
+<xs:element name="etaVo" nillable="true" type="xs:anyType"/>
+<xs:element name="infraEstruturaVo" type="tns:infraEstruturaVo"/>
+<xs:element name="localAbastecidoVo" type="tns:localAbastecidoVo"/>
+<xs:element name="manancialVo" type="tns:manancialVo"/>
+<xs:element name="parametroMonitoramentoVO" type="tns:parametroMonitoramentoVO"/>
+<xs:element name="parametroPlanoAmostragemVo" type="tns:parametroPlanoAmostragemVo"/>
+<xs:element name="periodoSAAVo" type="tns:periodoSAAVo"/>
+<xs:element name="periodoSACVo" type="tns:periodoSACVo"/>
+<xs:element name="periodoVo" type="tns:periodoVo"/>
+<xs:element name="planoAbstract" type="tns:planoAbstract"/>
+<xs:element name="planoAmostragemVO" type="tns:planoAmostragemVO"/>
+<xs:element name="pontoCaptacaoEmpresaVo" type="tns:pontoCaptacaoEmpresaVo"/>
+<xs:element name="pontoCaptacaoSubVo" type="tns:pontoCaptacaoSubVo"/>
+<xs:element name="pontoCaptacaoSupVo" type="tns:pontoCaptacaoSupVo"/>
+<xs:element name="pontoCaptacaoVo" type="tns:pontoCaptacaoVo"/>
+<xs:element name="populacaoAbastecidaVo" nillable="true" type="xs:anyType"/>
+<xs:element name="resposta" type="tns:resposta"/>
+<xs:element name="respostaConsultaControle" type="tns:respostaConsultaControle"/>
+<xs:element name="respostaConsultaPlanoAmostragem" type="tns:respostaConsultaPlanoAmostragem"/>
+<xs:element name="respostaConsultaSA" type="tns:respostaConsultaSA"/>
+<xs:element name="respostaConsultaSaEmpresa" type="tns:respostaConsultaSaEmpresa"/>
+<xs:element name="respostaErro" type="tns:respostaErro"/>
+<xs:element name="respostaErroPlano" type="tns:respostaErroPlano"/>
+<xs:element name="respostaPlano" type="tns:respostaPlano"/>
+<xs:element name="respostaPlanoAmostragemBI" type="tns:respostaPlanoAmostragemBI"/>
+<xs:element name="resultadoAmostraVo" type="tns:resultadoAmostraVo"/>
+<xs:element name="saVo" nillable="true" type="xs:anyType"/>
+<xs:element name="saaEmpresaVo" type="tns:saaEmpresaVo"/>
+<xs:element name="saaVo" nillable="true" type="xs:anyType"/>
+<xs:element name="sacEmpresaVo" type="tns:sacEmpresaVo"/>
+<xs:element name="sacVo" nillable="true" type="xs:anyType"/>
+<xs:element name="saiVo" type="tns:saiVo"/>
+<xs:element name="sistemaDistribuicaoVo" nillable="true" type="xs:anyType"/>
+<xs:element name="soluacaoAbastecimentoMesError" type="tns:soluacaoAbastecimentoMesError"/>
+<xs:element name="soluacaoAbastecimentoSemestreError" type="tns:soluacaoAbastecimentoSemestreError"/>
+<xs:element name="solucaoAbastecimentoEmpresaResposta" type="tns:solucaoAbastecimentoEmpresaResposta"/>
+<xs:element name="solucaoAbastecimentoError" type="tns:solucaoAbastecimentoError"/>
+<xs:element name="solucaoAbastecimentoSAAVo" type="tns:solucaoAbastecimentoSAAVo"/>
+<xs:element name="solucaoAbastecimentoSACVo" type="tns:solucaoAbastecimentoSACVo"/>
+<xs:element name="solucaoAbastecimentoSemestralError" type="tns:solucaoAbastecimentoSemestralError"/>
+<xs:element name="solucaoAbastecimentoSemestralResposta" type="tns:solucaoAbastecimentoSemestralResposta"/>
+<xs:element name="solucaoAbastecimentoVo" type="tns:solucaoAbastecimentoVo"/>
+<xs:complexType name="empresaEnviarControleSaaSemestral">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="solucaoAbastecimentoSAA" type="tns:solucaoAbastecimentoSAAVo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoSAAVo">
+<xs:complexContent>
+<xs:extension base="tns:solucaoAbastecimentoVo">
+<xs:sequence>
+<xs:element name="periodos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="periodo" type="tns:periodoSAAVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="solucaoAbastecimentoVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="codigoFormaAbastecimento" type="xs:string"/>
+<xs:element name="anoReferencia" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="webServiceFlag">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="entidadeValida">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="entidadeBasicaSisagua">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasica">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="entidadeBasica">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="periodoSAAVo">
+<xs:complexContent>
+<xs:extension base="tns:periodoVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="tratamentoAgua">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="eta" type="tns:controleEtaSemestralSaaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="sistemaDistribuicao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="municipio" type="tns:sistemaDistribuicaoSemestralVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="periodoVo">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence>
+<xs:element name="semestre" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleEtaSemestralSaaVo">
+<xs:complexContent>
+<xs:extension base="tns:controleSemestralEtaVo">
+<xs:sequence>
+<xs:element name="analisesNovaNorma">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="analiseNovaNorma" type="tns:analiseNovaNormaSAAVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleSemestralEtaVo">
+<xs:complexContent>
+<xs:extension base="tns:controleSemestralVo">
+<xs:sequence>
+<xs:element name="estacaoTratamento" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="controleSemestralVo">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence>
+<xs:element minOccurs="0" name="cevs" type="xs:string"/>
+<xs:element name="dataPreenchimento" type="xs:string"/>
+<xs:element name="responsavelPelasInformacoes" type="xs:string"/>
+<xs:element name="cargoResponsavel" type="xs:string"/>
+<xs:element name="naoOperouSemestre" type="xs:string"/>
+<xs:element name="analises">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="analise" type="tns:analiseVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="analiseNovaNormaSAAVo">
+<xs:complexContent>
+<xs:extension base="tns:analiseNovaNormaVo">
+<xs:sequence>
+<xs:element name="trimestre" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="analiseNovaNormaVo">
+<xs:complexContent>
+<xs:extension base="tns:analiseVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoPontoCaptacao" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="analiseVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="grupoParametro" type="xs:string"/>
+<xs:element name="parametro" type="xs:string"/>
+<xs:element name="pontoMonitoramento" type="xs:string"/>
+<xs:element name="campo" type="xs:string"/>
+<xs:element name="valor" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="sistemaDistribuicaoSemestralVo">
+<xs:complexContent>
+<xs:extension base="tns:controleSemestralVo">
+<xs:sequence>
+<xs:element name="codigoMunicipio" type="xs:string"/>
+<xs:element name="analisesNovaNorma">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="analiseNovaNorma" type="tns:analiseNovaNormaSAASistDistribuicaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="analiseNovaNormaSAASistDistribuicaVo">
+<xs:complexContent>
+<xs:extension base="tns:analiseVo">
+<xs:sequence>
+<xs:element name="trimestre" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="periodoSACVo">
+<xs:complexContent>
+<xs:extension base="tns:periodoVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="tratamentoAgua" type="tns:controleEtaSemestralSacVo"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleEtaSemestralSacVo">
+<xs:complexContent>
+<xs:extension base="tns:controleSemestralVo">
+<xs:sequence>
+<xs:element name="analisesNovaNorma">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="analiseNovaNorma" type="tns:analiseNovaNormaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoSACVo">
+<xs:complexContent>
+<xs:extension base="tns:solucaoAbastecimentoVo">
+<xs:sequence>
+<xs:element name="periodos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="periodo" type="tns:periodoSACVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="empresaEnviarControleSaaSemestralResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:resposta"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType abstract="true" name="resposta">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string"/>
+<xs:element name="mensagem" type="xs:string"/>
+<xs:element name="sucesso" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="respostaConsultaSA">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element name="sas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="sa" type="tns:saVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="saVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="cevs" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="saaVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="etas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="eta" type="tns:etaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="populacoesAbastecidas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="populacaoAbastecida" type="tns:populacaoAbastecidaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="etaVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="codigoMunicipioEta" type="xs:long"/>
+<xs:element name="nomeMunicipioEta" type="xs:string"/>
+<xs:element name="carroPipa" type="xs:boolean"/>
+<xs:element name="chafariz" type="xs:boolean"/>
+<xs:element name="canalizacao" type="xs:boolean"/>
+<xs:element name="cisterna" type="xs:boolean"/>
+<xs:element name="fonte" type="xs:boolean"/>
+<xs:element name="outroSuprimento" type="xs:string"/>
+<xs:element name="pontosCaptacao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="pontoCaptacao" type="tns:pontoCaptacaoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType abstract="true" name="pontoCaptacaoVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pontoCaptacaoSubVo">
+<xs:complexContent>
+<xs:extension base="tns:pontoCaptacaoVo">
+<xs:sequence>
+<xs:element name="tipoCaptacaoSubterranea" type="xs:string"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="codigoMunicipioPontoCaptacaoSub" type="xs:long"/>
+<xs:element name="nomeMunicipioPontoCaptacaoSub" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="pontoCaptacaoSupVo">
+<xs:complexContent>
+<xs:extension base="tns:pontoCaptacaoVo">
+<xs:sequence>
+<xs:element name="manancial" type="tns:manancialVo"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="manancialVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="categoria" type="xs:string"/>
+<xs:element name="codigoMunicipioManancial" type="xs:long"/>
+<xs:element name="nomeMunicipioManancial" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="populacaoAbastecidaVo">
+<xs:sequence>
+<xs:element name="codigoMunicipio" type="xs:long"/>
+<xs:element name="nomeMunicipio" type="xs:string"/>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="areasAbastecidas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="area" type="tns:areaAbastecidaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="areaAbastecidaVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="categoriaArea" type="xs:string"/>
+<xs:element name="codigoMunicipioArea" type="xs:long"/>
+<xs:element name="nomeMunicipioArea" type="xs:string"/>
+<xs:element name="zona" type="xs:string"/>
+<xs:element name="tpAbastecimento" type="xs:string"/>
+<xs:element name="locaisAbastecidos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="local" type="tns:localAbastecidoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="localAbastecidoVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="tipo" type="xs:string"/>
+<xs:element name="codigoMunicipioLocal" type="xs:long"/>
+<xs:element name="nomeMunicipioLocal" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sacVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="eta" type="tns:etaVo"/>
+<xs:element name="populacaoAbastecida" type="tns:populacaoAbastecidaVo"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="saiVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="codigoLocal" type="xs:long"/>
+<xs:element name="codigoArea" type="xs:long"/>
+<xs:element name="nomeArea" type="xs:string"/>
+<xs:element name="categoriaArea" type="xs:string"/>
+<xs:element name="tipoLocal" type="xs:string"/>
+<xs:element name="codigoMunicipioArea" type="xs:long"/>
+<xs:element name="nomeMunicipioArea" type="xs:string"/>
+<xs:element name="pontosCaptacao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="pontoCaptacao" type="tns:pontoCaptacaoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="saaEmpresaVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="etas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="eta" type="tns:etaEmpresaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="populacoesAbastecidas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="populacaoAbastecida" type="tns:populacaoAbastecidaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="etaEmpresaVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="codigoMunicipioEta" type="xs:long"/>
+<xs:element name="nomeMunicipioEta" type="xs:string"/>
+<xs:element name="carroPipa" type="xs:boolean"/>
+<xs:element name="chafariz" type="xs:boolean"/>
+<xs:element name="canalizacao" type="xs:boolean"/>
+<xs:element name="cisterna" type="xs:boolean"/>
+<xs:element name="fonte" type="xs:boolean"/>
+<xs:element name="outroSuprimento" type="xs:string"/>
+<xs:element name="pontosCaptacao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="pontoCaptacao" type="tns:pontoCaptacaoEmpresaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pontoCaptacaoEmpresaVo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:long"/>
+<xs:element name="tipoCaptacao" type="xs:string"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="categoria" type="xs:string"/>
+<xs:element name="codigoMunicipio" type="xs:string"/>
+<xs:element name="nomeMunicipio" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sacEmpresaVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="eta" type="tns:etaEmpresaVo"/>
+<xs:element name="populacaoAbastecida" type="tns:populacaoAbastecidaVo"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="carroPipaVo">
+<xs:complexContent>
+<xs:extension base="tns:saVo">
+<xs:sequence>
+<xs:element name="populacoesAbastecidas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="populacaoAbastecida" type="tns:populacaoAbastecidaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="respostaConsultaSaEmpresa">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element name="formasAbastecimento">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="formaAbastecimento" type="tns:saVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="respostaErro">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element name="detalhamento" type="xs:string"/>
+<xs:element name="sugestao" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="respostaConsultaControle">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element name="controles">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="controle" type="tns:controleVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleVo">
+<xs:sequence>
+<xs:element name="codigoSolucao" type="xs:string"/>
+<xs:element name="periodoReferencia" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="controleSacMensalVo">
+<xs:complexContent>
+<xs:extension base="tns:controleVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="controlesPeriodo">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="controlePeriodo" type="tns:controlePeriodoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controlePeriodoVo">
+<xs:sequence>
+<xs:element name="periodo" type="xs:string"/>
+<xs:element name="dataPreenchimento" type="xs:dateTime"/>
+<xs:element name="responsavelPelasInformacoes" type="xs:string"/>
+<xs:element name="cargoResponsavel" type="xs:string"/>
+<xs:element name="operouMes" type="xs:boolean"/>
+<xs:element minOccurs="0" name="amostras">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="amostra" type="tns:amostraVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="informacoesInfraEstrutura">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="informacaoInfraEstrutura" type="tns:controleInfraEstruturaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="amostraVo">
+<xs:sequence>
+<xs:element name="tipo" type="xs:string"/>
+<xs:element minOccurs="0" name="resultados">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="resultado" type="tns:resultadoAmostraVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultadoAmostraVo">
+<xs:sequence>
+<xs:element name="descricao" type="xs:string"/>
+<xs:element name="campo" type="xs:string"/>
+<xs:element name="valor" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="controleInfraEstruturaVo">
+<xs:sequence>
+<xs:element name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="faltaAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="reclamacaoCorAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="reclamacaoGostoOdor" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="controleSaaMensalVo">
+<xs:complexContent>
+<xs:extension base="tns:controleVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="controlesEta">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="controleEta" type="tns:controleEtaVO"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="controlesSistemaDistribuicao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="controleSistemaDistribuicao" type="tns:controleEtaVO"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleEtaVO">
+<xs:sequence>
+<xs:element minOccurs="0" name="controlesPeriodo">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="controlePeriodo" type="tns:controlePeriodoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="respostaConsultaPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element name="planosAmostragens">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="planoAmostragem" type="tns:planoAmostragemVO"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="planoAmostragemVO">
+<xs:sequence>
+<xs:element name="ano" type="xs:int"/>
+<xs:element name="codigoIBGE" type="xs:string"/>
+<xs:element minOccurs="0" name="parametrosMonitoramentos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="parametroMonitoramento" type="tns:parametroMonitoramentoVO"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="parametroMonitoramentoVO">
+<xs:sequence>
+<xs:element minOccurs="0" name="nomeParametro" type="xs:string"/>
+<xs:element minOccurs="0" name="descricaoParametro" type="xs:string"/>
+<xs:element minOccurs="0" name="valorDiretriz" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoEmpresaResposta">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element minOccurs="0" name="meses">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="mes" type="tns:solucaoAbastecimentoError"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoError">
+<xs:sequence>
+<xs:element minOccurs="0" name="mesAno" type="xs:string"/>
+<xs:element minOccurs="0" name="formasAbastecimento">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="formaAbastecimento" type="tns:soluacaoAbastecimentoMesError"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="soluacaoAbastecimentoMesError">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoFormaAbastecimento" type="xs:string"/>
+<xs:element minOccurs="0" name="etas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="eta" type="tns:etaErro"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="sistemasDistribuicao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="sistemaDistribuicao" type="tns:etaErro"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="mensagens">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="mensagem" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="controlesMensais">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="key" type="tns:controleMensalVo"/>
+<xs:element minOccurs="0" name="value" type="tns:controleMensal"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="etaErro">
+<xs:complexContent>
+<xs:extension base="tns:springBeanAutowiringSupport">
+<xs:sequence>
+<xs:element minOccurs="0" name="avisos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aviso" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="erros">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="erro" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="identificacao" type="xs:string"/>
+<xs:element minOccurs="0" name="mensagem" type="xs:string"/>
+<xs:element name="sucesso" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="springBeanAutowiringSupport">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType abstract="true" name="controleMensalVo">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence>
+<xs:element minOccurs="0" name="cevs" type="xs:string"/>
+<xs:element name="dataPreenchimento" type="xs:string"/>
+<xs:element name="responsavelPelasInformacoes" type="xs:string"/>
+<xs:element name="cargoResponsavel" type="xs:string"/>
+<xs:element name="naoOperouMes" type="xs:string"/>
+<xs:element name="resultadosAmostras">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="parametros" type="tns:coletaAmostraVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="aguaTratada">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="parametros" type="tns:amostraAnalisadaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="coletaAmostraVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="pontoMonitoramento" type="xs:string"/>
+<xs:element name="parametro" type="xs:string"/>
+<xs:element name="amostras">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="amostra" type="tns:amostraColetaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="amostraColetaVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="dataColeta" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoPontoCaptacao" type="xs:long"/>
+<xs:element minOccurs="0" name="campos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="campo" type="tns:campoAmostraColetaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="campoAmostraColetaVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="campo" type="xs:string"/>
+<xs:element name="valor" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="amostraAnalisadaVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element name="parametro" type="xs:string"/>
+<xs:element name="pontoMonitoramento" type="xs:string"/>
+<xs:element name="campo" type="xs:string"/>
+<xs:element name="valor" type="xs:string"/>
+<xs:element name="amostrasForaPadrao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="amostraForaPadrao" type="tns:amostraForaPadraoVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="amostraForaPadraoVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="data" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoLocal" type="xs:int"/>
+<xs:element minOccurs="0" name="codigoArea" type="xs:int"/>
+<xs:element minOccurs="0" name="endereco" type="xs:string"/>
+<xs:element minOccurs="0" name="latitude" type="xs:string"/>
+<xs:element minOccurs="0" name="longitude" type="xs:string"/>
+<xs:element minOccurs="0" name="resultado" type="xs:string"/>
+<xs:element minOccurs="0" name="providencia" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleEtaVo">
+<xs:complexContent>
+<xs:extension base="tns:controleMensalVo">
+<xs:sequence>
+<xs:element name="estacaoTratamento" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleEtaSacVo">
+<xs:complexContent>
+<xs:extension base="tns:controleMensalVo">
+<xs:sequence>
+<xs:element name="informacoesInfraEstrutura">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="informacaoInfraEstrutura" type="tns:infraEstruturaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="infraEstruturaVo">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoArea" type="xs:int"/>
+<xs:element minOccurs="0" name="codigoLocal" type="xs:int"/>
+<xs:element minOccurs="0" name="intermitencia" type="xs:int"/>
+<xs:element minOccurs="0" name="reparosRede" type="xs:int"/>
+<xs:element minOccurs="0" name="faltaAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="reclamacaoCorAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="reclamacaoGostoOdor" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="sistemaDistribuicaoVo">
+<xs:complexContent>
+<xs:extension base="tns:controleMensalVo">
+<xs:sequence>
+<xs:element name="codigoMunicipio" type="xs:string"/>
+<xs:element name="infraestruturaOperacionais">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="eventosLocalidade" type="tns:infraEstruturaVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleMensal">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="amostrasAnalisadasMonitoradas" nillable="true" type="tns:amostraAnalisadaMonitora"/>
+<xs:element minOccurs="0" name="cargoResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="cevs" type="xs:integer"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="coletasAmostra" nillable="true" type="tns:coletaAmostra"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="controleMensalLocalidades" nillable="true" type="tns:controleMensalLocalidade"/>
+<xs:element name="controleMensalLocalidadesInformado" type="xs:boolean"/>
+<xs:element minOccurs="0" ref="tns:controleMensalVo"/>
+<xs:element name="controleValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataPreenchimento" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="estacaoTratamento" type="tns:estacaoTratamento"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="mes" type="xs:int"/>
+<xs:element minOccurs="0" name="nomeResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="origemWebService" type="tns:origemWebserviceEnum"/>
+<xs:element minOccurs="0" name="populacaoAbastecida" type="tns:populacaoAbastecida"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="solucaoAbastecimento" type="tns:solucaoAbastecimento"/>
+<xs:element name="statusFinalizado" type="xs:boolean"/>
+<xs:element name="statusNaoOperouMes" type="xs:boolean"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposAmostrasAnalisadasPreenchidas" nillable="true" type="tns:tipoAmostraAnalisadaEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposColetaPreenchidos" nillable="true" type="tns:tipoColetaEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposPontoColetaAcrilamidaPreenchidos" nillable="true" type="tns:tipoPontoColetaEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposPontoColetaCianotoxinaPreenchidos" nillable="true" type="tns:tipoPontoColetaEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposPontoColetaEpicloridrinaPreenchidos" nillable="true" type="tns:tipoPontoColetaEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposPontoColetaEsporosBacteriasAerobiasPreenchidos" nillable="true" type="tns:tipoPontoColetaEnum"/>
+<xs:element minOccurs="0" name="totalFaltaAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="totalIntermitencia" type="xs:int"/>
+<xs:element minOccurs="0" name="totalReclamacaoCorAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="totalReclamacaoGostoOdor" type="xs:int"/>
+<xs:element minOccurs="0" name="totalReparosRede" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="amostraAnalisadaMonitora">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="amostrasForaPadrao" nillable="true" type="tns:amostraForaPadrao"/>
+<xs:element minOccurs="0" name="controleMensal" type="tns:controleMensal"/>
+<xs:element name="controleValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element name="somatorioValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="tipoAmostraAnalisada" type="tns:tipoAmostraAnalisada"/>
+<xs:element minOccurs="0" name="tipoMonitoramento" type="tns:tipoMonitoramento"/>
+<xs:element minOccurs="0" name="tipoPontoColeta" type="tns:tipoPontoColeta"/>
+<xs:element minOccurs="0" name="valorAmostraAnalisadaMonitora" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="amostraForaPadrao">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="amostraAnalisadaMonitora" type="tns:amostraAnalisadaMonitora"/>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element name="controleValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dataColeta" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="endereco" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="latitude" type="xs:decimal"/>
+<xs:element minOccurs="0" name="local" type="tns:local"/>
+<xs:element minOccurs="0" name="localAreaComboVO" type="tns:localAreaComboVO"/>
+<xs:element minOccurs="0" name="longitude" type="xs:decimal"/>
+<xs:element minOccurs="0" name="providencia" type="xs:string"/>
+<xs:element minOccurs="0" name="resultado" type="xs:decimal"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="area">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="categoriaArea" type="tns:categoriaArea"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="fonte" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="locaisList" nillable="true" type="tns:local"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="subAreas" nillable="true" type="tns:subArea"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="categoriaArea">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listaArea" nillable="true" type="tns:area"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="tipoZona" type="tns:tipoZona"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoZona">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="local">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoLocal" type="tns:tipoLocal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoLocal">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="ordem" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="municipio">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element minOccurs="0" name="inMunicipio" type="xs:string"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="populacao" type="xs:decimal"/>
+<xs:element minOccurs="0" name="regiaoSaude" type="tns:regiaoSaude"/>
+<xs:element minOccurs="0" name="uf" type="tns:uf"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="regiaoSaude">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:int"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="siglaUf" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="uf">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listaMunicipio" nillable="true" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="sigla" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="subArea">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element minOccurs="0" name="cep" type="xs:string"/>
+<xs:element minOccurs="0" name="endereco" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="localAreaComboVO">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="tipoAmostraAnalisada">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoAmostraAnalisada" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoMonitoramento">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="numeroFiltro" type="xs:int"/>
+<xs:element minOccurs="0" name="tipoMonitoramento" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoPontoColeta">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoPontoColeta" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="coletaAmostra">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="controleMensal" type="tns:controleMensal"/>
+<xs:element name="controleValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dataAnaliseAmostra" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataColetaAmostra" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="pontoCaptacao" type="tns:pontoCaptacao"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoAmostra" type="tns:tipoAmostra"/>
+<xs:element minOccurs="0" name="tipoColeta" type="tns:tipoColeta"/>
+<xs:element minOccurs="0" name="tipoNumeroAmostra" type="tns:tipoNumeroAmostra"/>
+<xs:element minOccurs="0" name="tipoPontoColeta" type="tns:tipoPontoColeta"/>
+<xs:element minOccurs="0" name="valorAlfaColetaAmostra" type="xs:string"/>
+<xs:element minOccurs="0" name="valorColetaAmostra" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorColetaAmostraRadio" type="xs:string"/>
+<xs:element minOccurs="0" name="valorColetaAmostraStr" type="xs:string"/>
+<xs:element minOccurs="0" name="valorLDColetaAmostra" type="xs:string"/>
+<xs:element minOccurs="0" name="valorLQColetaAmostra" type="xs:string"/>
+<xs:element minOccurs="0" name="wsReferencia" type="xs:anyType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="pontoCaptacao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="coletasAmostra" nillable="true" type="tns:coletaAmostra"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="estacaoTratamento" type="tns:estacaoTratamento"/>
+<xs:element minOccurs="0" name="excluido" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="labelTipoAmostraImpressao" type="xs:string"/>
+<xs:element minOccurs="0" name="labelUnidadeMedidaImpressao" type="xs:string"/>
+<xs:element minOccurs="0" name="latitude" type="xs:decimal"/>
+<xs:element minOccurs="0" name="longitude" type="xs:decimal"/>
+<xs:element minOccurs="0" name="manancial" type="tns:manancial"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nomePonto" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroAmostras" type="xs:int"/>
+<xs:element minOccurs="0" name="outorga" type="xs:boolean"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pontosAnalise" nillable="true" type="tns:pontoAnalise"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="solucaoAbastecimentoIndividual" type="tns:solucaoAbastecimentoIndividual"/>
+<xs:element minOccurs="0" name="temporalId" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoCategoriaCaptacaoSubterranea" type="tns:tipoCategoriaCaptacaoSubterranea"/>
+<xs:element minOccurs="0" name="tipoPontoCaptacao" type="tns:tipoPontoCaptacao"/>
+<xs:element minOccurs="0" name="uf" type="tns:uf"/>
+<xs:element name="validado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="vazaoCaptada" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="estacaoTratamento">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element name="acrilamida" type="xs:boolean"/>
+<xs:element name="aguaChuva" type="xs:boolean"/>
+<xs:element name="alterado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element name="baldeGalao" type="xs:boolean"/>
+<xs:element name="canalizacao" type="xs:boolean"/>
+<xs:element name="carroPipa" type="xs:boolean"/>
+<xs:element minOccurs="0" name="cep" type="xs:string"/>
+<xs:element name="chafariz" type="xs:boolean"/>
+<xs:element name="cisterna" type="xs:boolean"/>
+<xs:element name="cloramina" type="xs:boolean"/>
+<xs:element name="cloroGasHipo" type="xs:boolean"/>
+<xs:element name="cloroResidualCombinado" type="xs:boolean"/>
+<xs:element name="cloroResidualLivre" type="xs:boolean"/>
+<xs:element minOccurs="0" name="codigoConselhoClasse" type="xs:string"/>
+<xs:element minOccurs="0" name="ddd" type="xs:string"/>
+<xs:element name="decantacao" type="xs:boolean"/>
+<xs:element name="desfluoretacao" type="xs:boolean"/>
+<xs:element name="dioxidoCloro" type="xs:boolean"/>
+<xs:element name="dioxidoCloroResidual" type="xs:boolean"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element name="epicloridrina" type="xs:boolean"/>
+<xs:element minOccurs="0" name="excluido" type="tns:situacaoRegistroEnum"/>
+<xs:element name="filtrante" type="xs:boolean"/>
+<xs:element name="floculacao" type="xs:boolean"/>
+<xs:element name="flotacao" type="xs:boolean"/>
+<xs:element name="fluoretacao" type="xs:boolean"/>
+<xs:element name="fonte" type="xs:boolean"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="isocianuratosClorados" type="xs:boolean"/>
+<xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+<xs:element name="mistRapidaCoag" type="xs:boolean"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nomeEta" type="xs:string"/>
+<xs:element minOccurs="0" name="nrAnotResponTecnica" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroEndereco" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroFiltros" type="xs:int"/>
+<xs:element minOccurs="0" name="outraDesinfeccao" type="xs:string"/>
+<xs:element minOccurs="0" name="outraEtapaTrat" type="xs:string"/>
+<xs:element minOccurs="0" name="outroSuprimento" type="xs:string"/>
+<xs:element name="ozonio" type="xs:boolean"/>
+<xs:element minOccurs="0" name="podeAlterarEndereco" type="tns:simNaoEnum"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pontosCaptacaoList" nillable="true" type="tns:pontoCaptacao"/>
+<xs:element name="possuiCanalizacao" type="xs:boolean"/>
+<xs:element name="possuiDesinfeccao" type="xs:boolean"/>
+<xs:element name="possuiTratamento" type="xs:boolean"/>
+<xs:element name="preOxidacao" type="xs:boolean"/>
+<xs:element minOccurs="0" name="preOxidacaoTipo" type="tns:preOxidacaoEnum"/>
+<xs:element minOccurs="0" name="responsavel" type="xs:string"/>
+<xs:element name="responsavelTecnicoExistente" type="xs:boolean"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="solucaoAbastecimento" type="tns:solucaoAbastecimento"/>
+<xs:element minOccurs="0" name="telefone" type="xs:string"/>
+<xs:element minOccurs="0" name="tempoMedioDiario" type="xs:string"/>
+<xs:element minOccurs="0" name="tipoFiltracao" type="tns:tipoFiltracao"/>
+<xs:element minOccurs="0" name="tipoFormacao" type="tns:tipoFormacao"/>
+<xs:element minOccurs="0" name="uf" type="tns:uf"/>
+<xs:element name="uv" type="xs:boolean"/>
+<xs:element minOccurs="0" name="vazaoTratamento" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimento">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="ano" type="xs:int"/>
+<xs:element minOccurs="0" name="anoRestricao" type="xs:int"/>
+<xs:element minOccurs="0" name="cevs" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoConselhoClasse" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoSolucaoAbastecimento" type="xs:string"/>
+<xs:element name="controleMensal" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataPreenchimentoFormulario" type="xs:dateTime"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="estacoesTratamentoList" nillable="true" type="tns:estacaoTratamento"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="instituicao" type="tns:empresa"/>
+<xs:element name="instituicaoNaoExistente" type="xs:boolean"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="nomeResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="nrAnotResponTecnica" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="populacoesAbastecidaList" nillable="true" type="tns:populacaoAbastecida"/>
+<xs:element name="possuiFluoretacao" type="xs:boolean"/>
+<xs:element minOccurs="0" name="responsavel" type="xs:string"/>
+<xs:element name="responsavelTecnicoExistente" type="xs:boolean"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="statusSaaAtualizado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="tipoAbastecimento" type="tns:tipoAbastecimento"/>
+<xs:element minOccurs="0" name="tipoFormacao" type="tns:tipoFormacao"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="empresa">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="bairro" type="xs:string"/>
+<xs:element minOccurs="0" name="cep" type="xs:string"/>
+<xs:element minOccurs="0" name="constituicaoJuridica" type="tns:constituicaoJuridica"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="ddd" type="xs:long"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="empresaPai" type="tns:empresa"/>
+<xs:element minOccurs="0" name="endereco" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listaMunicipioEmpresa" nillable="true" type="tns:municipioEmpresa"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="nomeEscritorioRegional" type="xs:string"/>
+<xs:element minOccurs="0" name="nomePresidente" type="xs:string"/>
+<xs:element minOccurs="0" name="nuCnpj" type="xs:long"/>
+<xs:element minOccurs="0" name="numeroEndereco" type="xs:string"/>
+<xs:element minOccurs="0" name="podeAlterarEndereco" type="tns:simNaoEnum"/>
+<xs:element minOccurs="0" name="responsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="siglaEmpresa" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="telefone" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoAbrangencia" type="tns:tipoAbrangencia"/>
+<xs:element minOccurs="0" name="tipoEmpresa" type="tns:tipoEmpresa"/>
+<xs:element minOccurs="0" name="tipoLogradouro" type="tns:tipoLogradouro"/>
+<xs:element minOccurs="0" name="url" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="constituicaoJuridica">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoEmpresa" type="tns:tipoEmpresa"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoEmpresa">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="municipioEmpresa">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="empresa" type="tns:empresa"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoAbrangencia">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoLogradouro">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="populacaoAbastecida">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="areaPopulacaoList" nillable="true" type="tns:areaPopulacao"/>
+<xs:element name="carregado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="domiciliosNaoPermantes" type="xs:int"/>
+<xs:element minOccurs="0" name="domiciliosPermantes" type="xs:int"/>
+<xs:element minOccurs="0" name="excluido" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="instituicao" type="tns:empresa"/>
+<xs:element minOccurs="0" name="municipio" type="tns:municipio"/>
+<xs:element name="populacaoAbastecidaPorSaa" type="xs:boolean"/>
+<xs:element name="recarregada" type="xs:boolean"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="solucaoAbastecimento" type="tns:solucaoAbastecimento"/>
+<xs:element minOccurs="0" name="uf" type="tns:uf"/>
+<xs:element minOccurs="0" name="valorCalculoPopulacaoEstimada" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorRural" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorUrbana" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="areaPopulacao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element minOccurs="0" name="excluido" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="localAreaPopulacaoList" nillable="true" type="tns:localAreaPopulacao"/>
+<xs:element minOccurs="0" name="populacaoAbastecida" type="tns:populacaoAbastecida"/>
+<xs:element name="recarregada" type="xs:boolean"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoAbastecimentoArea" type="tns:tipoAbastecimentoArea"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="localAreaPopulacao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="areaPopulacao" type="tns:areaPopulacao"/>
+<xs:element minOccurs="0" name="excluido" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="local" type="tns:local"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoAbastecimentoArea">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoAbastecimento">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoFormacao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoFiltracao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="frequencia" type="xs:int"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="manancial">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="categoria" type="tns:categoriaManancial"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="fonte" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="categoriaManancial">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoCategoriaManancial" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="pontoAnalise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="camposAnalise" nillable="true" type="tns:campoAnalise"/>
+<xs:element minOccurs="0" name="categoriaAnalise" type="tns:categoriaAnalise"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="pontoCaptacao" type="tns:pontoCaptacao"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoPontoColeta" type="tns:tipoPontoColeta"/>
+<xs:element minOccurs="0" name="tipoTrimestre" type="tns:tipoTrimestreEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="campoAnalise">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="dtAlteracao" type="xs:dateTime"/>
+<xs:element name="foiAlterado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="labelCampo" type="tns:labelCampo"/>
+<xs:element minOccurs="0" name="mascaraRegex" type="xs:string"/>
+<xs:element name="ordemApresentacao" type="xs:int"/>
+<xs:element minOccurs="0" name="pontoAnalise" type="tns:pontoAnalise"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element name="tamanhoCampoDecimal" type="xs:int"/>
+<xs:element name="tamanhoCampoInteiro" type="xs:int"/>
+<xs:element minOccurs="0" name="tipoCampo" type="tns:tipoCampo"/>
+<xs:element minOccurs="0" name="valor" type="xs:string"/>
+<xs:element minOccurs="0" name="valorData" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="valorDecimal" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorLDLQ2" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="labelCampo">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nome" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoCampo">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="mascaraCampo" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="categoriaAnalise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="analise" type="tns:analise"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="numeroAmostraTipoPontoColeta" type="xs:int"/>
+<xs:element name="ordemApresentacao" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pontosAnalise" nillable="true" type="tns:pontoAnalise"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pontosCaptacao" nillable="true" type="tns:pontoCaptacao"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoCategoriaAnalise" type="tns:tipoCategoriaAnalise"/>
+<xs:element name="tratamentoAguaNoPontoCaptacao" type="xs:boolean"/>
+<xs:element name="validado" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="analise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="categoriasAnalise" nillable="true" type="tns:categoriaAnalise"/>
+<xs:element minOccurs="0" name="controleSemestral" type="tns:controleSemestral"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="ordemApresentacao" type="xs:int"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="tipoAnalise" type="tns:tipoAnalise"/>
+<xs:element minOccurs="0" name="tipoMonitoramentoAnalise" type="xs:long"/>
+<xs:element name="tratamentoAguaNoPontoCaptacao" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleSemestral">
+<xs:complexContent>
+<xs:extension base="tns:entidadeValida">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="analises" nillable="true" type="tns:analise"/>
+<xs:element minOccurs="0" name="cargoResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="cevs" type="xs:integer"/>
+<xs:element minOccurs="0" ref="tns:controleSemestralVo"/>
+<xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataPreenchimento" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="estacaoTratamento" type="tns:estacaoTratamento"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nomeResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="origemWebService" type="tns:origemWebserviceEnum"/>
+<xs:element minOccurs="0" name="populacaoAbastecida" type="tns:populacaoAbastecida"/>
+<xs:element minOccurs="0" name="semestre" type="xs:int"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="solucaoAbastecimento" type="tns:solucaoAbastecimento"/>
+<xs:element name="statusFinalizado" type="xs:boolean"/>
+<xs:element name="statusNaoOperouSemestre" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoAnalise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="ordem" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposMonitoramento" nillable="true" type="tns:tipoMonitoramentoAnalise"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoMonitoramentoAnalise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tiposAnalise" nillable="true" type="tns:tipoAnalise"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoCategoriaAnalise">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="anoFim" type="xs:int"/>
+<xs:element minOccurs="0" name="anoInicio" type="xs:int"/>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nomeParametro" type="xs:string"/>
+<xs:element minOccurs="0" name="siglaUnidade" type="xs:string"/>
+<xs:element minOccurs="0" name="tipoAnalise" type="tns:tipoAnalise"/>
+<xs:element minOccurs="0" name="valorReferencia" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoIndividual">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element name="aguaChuva" type="xs:boolean"/>
+<xs:element minOccurs="0" name="aguaDesinfecAntesConsumo" type="xs:boolean"/>
+<xs:element minOccurs="0" name="aguaFiltradaAntesConsumo" type="xs:boolean"/>
+<xs:element minOccurs="0" name="anoRestricao" type="xs:int"/>
+<xs:element minOccurs="0" name="anoSai" type="xs:string"/>
+<xs:element minOccurs="0" name="anoSaiInt" type="xs:int"/>
+<xs:element name="baldeGalao" type="xs:boolean"/>
+<xs:element minOccurs="0" name="cep" type="xs:string"/>
+<xs:element minOccurs="0" name="cevs" type="xs:decimal"/>
+<xs:element name="cisterna" type="xs:boolean"/>
+<xs:element minOccurs="0" name="codigoSai" type="xs:string"/>
+<xs:element minOccurs="0" name="dataAlteracao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataFormCadastro" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listaPontosCaptacao" nillable="true" type="tns:pontoCaptacao"/>
+<xs:element minOccurs="0" name="local" type="tns:local"/>
+<xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+<xs:element minOccurs="0" name="nomeResponsavel" type="xs:string"/>
+<xs:element minOccurs="0" name="nrDomiciliosPermantes" type="xs:long"/>
+<xs:element minOccurs="0" name="numeroEndereco" type="xs:string"/>
+<xs:element minOccurs="0" name="outroSuprimento" type="xs:string"/>
+<xs:element minOccurs="0" name="podeAlterarEndereco" type="tns:simNaoEnum"/>
+<xs:element name="popAbastecidaPorSaa" type="xs:boolean"/>
+<xs:element minOccurs="0" name="possuiCanalizacao" type="xs:boolean"/>
+<xs:element minOccurs="0" name="registroAtivo" type="tns:situacaoRegistroEnum"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="valorCalculoPopulacaoEstimada" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorRural" type="xs:decimal"/>
+<xs:element minOccurs="0" name="valorUrbana" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoCategoriaCaptacaoSubterranea">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoPontoCaptacao">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="descricao" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoAmostra">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="coletaAmostras" nillable="true" type="tns:coletaAmostra"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="numeroAmostras" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pontosDeCaptacao" nillable="true" type="tns:pontoCaptacao"/>
+<xs:element minOccurs="0" name="tipoAmostra" type="xs:string"/>
+<xs:element minOccurs="0" name="unidadeMedida" type="xs:string"/>
+<xs:element name="valido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="vmp" type="xs:decimal"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoColeta">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="anoReferencia" type="xs:long"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="permiteImprimir" type="xs:boolean"/>
+<xs:element minOccurs="0" name="tipoColeta" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="tipoNumeroAmostra">
+<xs:complexContent>
+<xs:extension base="tns:entidadeBasicaSisagua">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="tipoNumeroAmostra" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="controleMensalLocalidade">
+<xs:complexContent>
+<xs:extension base="tns:webServiceFlag">
+<xs:sequence>
+<xs:element minOccurs="0" name="area" type="tns:area"/>
+<xs:element minOccurs="0" name="controleMensal" type="tns:controleMensal"/>
+<xs:element name="controleValido" type="xs:boolean"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="local" type="tns:local"/>
+<xs:element minOccurs="0" name="numeroFaltaAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroIntermitencia" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroReclamacaoCorAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroReclamacaoGostoAgua" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroReparosRede" type="xs:int"/>
+<xs:element minOccurs="0" name="situacao" type="tns:situacaoRegistroEnum"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="respostaPlanoAmostragemBI">
+<xs:complexContent>
+<xs:extension base="tns:respostaPlano">
+<xs:sequence>
+<xs:element name="formasAbastecimento">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="formaAbastecimento" type="tns:SaVoPlanoAmostragem"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="respostaPlano">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="SaVoPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:springBeanAutowiringSupport">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoFormaAbastecimento" type="xs:string"/>
+<xs:element name="anoReferencia" type="xs:int"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="SaaVoPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:SaVoPlanoAmostragem">
+<xs:sequence>
+<xs:element name="etas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="eta" type="tns:EtaVoPlanoAmostragem"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="sistemasDistribuidos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="sistemaDistribuido" type="tns:PopulacaoAbastecidaVoPlanoAmostragem"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="EtaVoPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:planoAbstract">
+<xs:sequence>
+<xs:element minOccurs="0" name="nomeEta" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoEta" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="planoAbstract">
+<xs:complexContent>
+<xs:extension base="tns:springBeanAutowiringSupport">
+<xs:sequence>
+<xs:element name="planosAmostragem">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="planoAmostragem" type="tns:parametroPlanoAmostragemVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="parametroPlanoAmostragemVo">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoPontoMonitoramento" type="xs:string"/>
+<xs:element minOccurs="0" name="pontoMonitoramento" type="xs:string"/>
+<xs:element minOccurs="0" name="codigoParametro" type="xs:string"/>
+<xs:element minOccurs="0" name="parametro" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroMensalAmostra" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroMensalAmostraFiltro" type="xs:int"/>
+<xs:element minOccurs="0" name="numeroAmostra" type="xs:int"/>
+<xs:element minOccurs="0" name="totalAnualAmostra" type="xs:int"/>
+<xs:element minOccurs="0" name="frequencia" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="PopulacaoAbastecidaVoPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:planoAbstract">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoMunicipio" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="SacVoPlanoAmostragem">
+<xs:complexContent>
+<xs:extension base="tns:SaVoPlanoAmostragem">
+<xs:sequence>
+<xs:element name="planosAmostragem">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="planoAmostragem" type="tns:parametroPlanoAmostragemVo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="respostaErroPlano">
+<xs:complexContent>
+<xs:extension base="tns:respostaPlano">
+<xs:sequence>
+<xs:element name="detalhamento" type="xs:string"/>
+<xs:element name="sugestao" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoSemestralResposta">
+<xs:complexContent>
+<xs:extension base="tns:resposta">
+<xs:sequence>
+<xs:element minOccurs="0" name="semestres">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="semestre" type="tns:solucaoAbastecimentoSemestralError"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="solucaoAbastecimentoSemestralError">
+<xs:sequence>
+<xs:element minOccurs="0" name="semestre" type="xs:string"/>
+<xs:element minOccurs="0" name="formasAbastecimento">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="formaAbastecimento" type="tns:soluacaoAbastecimentoSemestreError"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="soluacaoAbastecimentoSemestreError">
+<xs:sequence>
+<xs:element minOccurs="0" name="codigoFormaAbastecimento" type="xs:string"/>
+<xs:element minOccurs="0" name="etas">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="eta" type="tns:etaSemestralErro"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="sistemasDistribuicao">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="sistemaDistribuicao" type="tns:etaSemestralErro"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="mensagens">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="mensagem" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="controlesMensais">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="key" type="tns:controleSemestralVo"/>
+<xs:element minOccurs="0" name="value" type="tns:controleSemestral"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="etaSemestralErro">
+<xs:complexContent>
+<xs:extension base="tns:springBeanAutowiringSupport">
+<xs:sequence>
+<xs:element minOccurs="0" name="avisos">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aviso" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="erros">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="erro" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="identificacao" type="xs:string"/>
+<xs:element minOccurs="0" name="mensagem" type="xs:string"/>
+<xs:element name="sucesso" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="pontoAnaliseVO">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="camposAnalise" nillable="true" type="tns:campoAnaliseVo"/>
+<xs:element minOccurs="0" name="tipoPontoColeta" type="xs:string"/>
+<xs:element minOccurs="0" name="tipoPontoColetaProdutoSecundario" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="campoAnaliseVo">
+<xs:sequence>
+<xs:element name="analise" type="xs:boolean"/>
+<xs:element name="radioLdLq" type="xs:boolean"/>
+<xs:element name="resultado" type="xs:boolean"/>
+<xs:element minOccurs="0" name="valor" type="xs:string"/>
+<xs:element minOccurs="0" name="valorFormatado" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="empresaEnviarControleSacSemestral">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="solucaoAbastecimentoSAC" type="tns:solucaoAbastecimentoSACVo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="empresaEnviarControleSacSemestralResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:resposta"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="situacaoRegistroEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="S"/>
+<xs:enumeration value="N"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="simNaoEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="N"/>
+<xs:enumeration value="S"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="preOxidacaoEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SEM_PRE_OXIDACAO"/>
+<xs:enumeration value="PERMANGANATO_DE_POTASSIO"/>
+<xs:enumeration value="CLORO"/>
+<xs:enumeration value="DIOXIDO_CLORO"/>
+<xs:enumeration value="PEROXIDO_HIDROGENIO"/>
+<xs:enumeration value="OZONIO"/>
+<xs:enumeration value="UV"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="origemWebserviceEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="A"/>
+<xs:enumeration value="I"/>
+<xs:enumeration value="W"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="tipoTrimestreEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PRIMEIRO_TRIMESTRE"/>
+<xs:enumeration value="SEGUNDO_TRIMESTRE"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="tipoAmostraAnalisadaEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="TURBIDEZ"/>
+<xs:enumeration value="TURBIDEZ_2"/>
+<xs:enumeration value="COR"/>
+<xs:enumeration value="PH"/>
+<xs:enumeration value="FLUORETO"/>
+<xs:enumeration value="CLORO_RESIDUAL_LIVRE"/>
+<xs:enumeration value="DIOXIDO_DE_CLORO"/>
+<xs:enumeration value="CLORAMINA"/>
+<xs:enumeration value="COLIFORMES_TOTAIS"/>
+<xs:enumeration value="ESCHERICHIA_COLI"/>
+<xs:enumeration value="BACTERIAS_HETEROTROFICAS"/>
+<xs:enumeration value="RESIDUAL_DESINFETANTE"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="tipoColetaEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ESCHERICHIA_COLI_QUALIDADE"/>
+<xs:enumeration value="CRYPTOSPORIDIUM"/>
+<xs:enumeration value="GIARDIA"/>
+<xs:enumeration value="VIRUS"/>
+<xs:enumeration value="CLOROFILA_A"/>
+<xs:enumeration value="FITOPLANCTON"/>
+<xs:enumeration value="CIANOBACTERIAS"/>
+<xs:enumeration value="CIANOTOXINAS"/>
+<xs:enumeration value="ACRILAMIDA"/>
+<xs:enumeration value="EPICLORIDRINA"/>
+<xs:enumeration value="ESPOROS_BACTERIAS_AEROBIAS"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="tipoPontoColetaEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="POS_PRE_FILTRACAO"/>
+<xs:enumeration value="SAIDA_DO_TRATAMENTO_AGUA_CANALIZADA"/>
+<xs:enumeration value="PONTO_DE_CONSUMO"/>
+<xs:enumeration value="SISTEMA_DISTRIBUICAO"/>
+<xs:enumeration value="SAIDA_DO_TRATAMENTO"/>
+<xs:enumeration value="PONTO_CAPTACAO"/>
+<xs:enumeration value="FOO"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="SisaguaNegocioException" type="tns:SisaguaNegocioException"/>
+<xs:complexType name="SisaguaNegocioException">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="empresaEnviarControleSaaSemestralResponse">
+<wsdl:part element="tns:empresaEnviarControleSaaSemestralResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="SisaguaNegocioException">
+<wsdl:part element="tns:SisaguaNegocioException" name="SisaguaNegocioException"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="empresaEnviarControleSacSemestralResponse">
+<wsdl:part element="tns:empresaEnviarControleSacSemestralResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="empresaEnviarControleSacSemestral">
+<wsdl:part element="tns:empresaEnviarControleSacSemestral" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="empresaEnviarControleSaaSemestral">
+<wsdl:part element="tns:empresaEnviarControleSaaSemestral" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="ControleSemestralWs">
+<wsdl:operation name="empresaEnviarControleSaaSemestral">
+<wsdl:input message="tns:empresaEnviarControleSaaSemestral" name="empresaEnviarControleSaaSemestral"> </wsdl:input>
+<wsdl:output message="tns:empresaEnviarControleSaaSemestralResponse" name="empresaEnviarControleSaaSemestralResponse"> </wsdl:output>
+<wsdl:fault message="tns:SisaguaNegocioException" name="SisaguaNegocioException"> </wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="empresaEnviarControleSacSemestral">
+<wsdl:input message="tns:empresaEnviarControleSacSemestral" name="empresaEnviarControleSacSemestral"> </wsdl:input>
+<wsdl:output message="tns:empresaEnviarControleSacSemestralResponse" name="empresaEnviarControleSacSemestralResponse"> </wsdl:output>
+<wsdl:fault message="tns:SisaguaNegocioException" name="SisaguaNegocioException"> </wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ControleSemestralWsSoapBinding" type="tns:ControleSemestralWs">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="empresaEnviarControleSaaSemestral">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="empresaEnviarControleSaaSemestral">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="empresaEnviarControleSaaSemestralResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="SisaguaNegocioException">
+<soap:fault name="SisaguaNegocioException" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="empresaEnviarControleSacSemestral">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="empresaEnviarControleSacSemestral">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="empresaEnviarControleSacSemestralResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="SisaguaNegocioException">
+<soap:fault name="SisaguaNegocioException" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ControleSemestralWs">
+<wsdl:port binding="tns:ControleSemestralWsSoapBinding" name="ControleSemestralWsPort">
+<soap:address location="http://sisagua.saude.gov.br/sisagua/integracao/controlesemestral"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
