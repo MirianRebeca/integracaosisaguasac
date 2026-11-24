@@ -1,0 +1,191 @@
+ANEXO 4 – Descrição dos arquivos relacionados ao controle semestral de SAC
+Versão: Produção (2026)
+ENVIO DOS DADOS DE CONTROLE SEMESTRAL DE SAC
+1. Estrutura XML e descrição das tags do arquivo de envio de dados de Controle Semestral de SAC Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+codigoFormaAbastecimento
+Código da forma de abastecimento (SAC)
+Sim
+Alfanumérico
+13
+O código da SAC deverá ser obtido para envio das informações por meio das orientações descritas para obtenção dos dados cadastrais da SAC.
+[RN001]
+[RN002]
+[RN013]
+[AG001]
+[AG002]
+[AG003]
+[AG004]
+anoReferencia
+Ano de referência
+Sim
+Numérico
+4
+É a identificação do ano de referência do cadastro da SAC.
+[RN010]
+[AG001]
+[AG002]
+[AG005] periodos - - - - Tag informativa que agrupa controles semestrais de uma determinada SAC. periodo - - - - Tag informativa que agrupa tags referentes ao controle semestral de uma determinada SAC em um dado mês
+semestre
+Semestre de referência
+Sim
+-
+1
+É a identificação do semestre de referência do monitoramento do controle da qualidade da água (recebe o valor 1 ou 2).
+[RN002]
+[RN013]
+[AG001]
+[AG002]
+[AG014] tratamentoAgua - - - - Tag que agrupa os dados do controle semestral. [RN009] [AG012] [AG013]
+cevs
+Número do cadastro estadual de vig. sanitária
+Não
+Numérico
+24
+Tag que informa o número de cadastro do estadual de vigilância sanitária. (Obrigatório apenas para o estado de São Paulo).
+[RN012]
+ANEXO 4 – Descrição dos arquivos relacionados ao controle semestral de SAC
+Versão: Produção (2026)
+Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+[AG001]
+[AG002]
+[AG015]
+dataPreenchimento
+Data do preenchimento do relatório semestral
+Condicional
+Data (dd/mm/aaaa)
+10
+A data de preenchimento do formulário deve ser a data de preenchimento do formulário pelo responsável pelas informações. Como a ferramenta dispensa a necessidade do repasse dos dados para a Vigilância, a data passa a ser a de envio das informações (data corrente).
+[RN010]
+[AG001]
+[AG002]
+[AG016]
+responsavelPelasInformacoes
+Responsável pelas informações
+Condicional
+Texto
+155
+Deve ser informado o nome do responsável pelas informações.
+[AG002]
+cargoResponsavel
+Cargo do responsável
+Condicional
+Texto
+100
+Deve ser informado o cargo do responsável pelas informações.
+[AG002]
+naoOperouSemestre
+A SAC não operou no mês
+Condicional
+Boolean
+-
+Informar: true; false.
+Caso a SAC tenha operado no semestre, informar a opção false, caso não tenha operado, informar a opção true. Ao informar a opção “true”, será entendido que a SAC não operou no semestre e o sistema não receberá as demais informações do controle semestral da SAC.
+[AG001]
+[AG002] analisesNovaNorma - - - - Tag informativa que agrupa os dados de monitoramento no Tratamento de Água, segundo os parâmetros exigidos na Portaria GM/MS n° 888/2021. analiseNovaNorma - - - - Tag informativa que agrupa as informações do campo e valor de um parâmetro, de um grupo de parâmetros, para um ponto de monitoramento
+grupoParametro
+Grupo de Parâmetro
+Condicional
+Alfanumérico
+35
+Tag que indica o grupo de parâmetros da seção Tratamento da Água, dentre as opções: SUBSTANCIAS_INORGANICAS, SUBSTANCIAS_ORGANICAS, AGROTOXICOS, OUTROS*, PRODUTOS_SECUNDARIOS_DESINFECCAO**, RADIOATIVIDADE***, PARAMETROS_ORGANOLEPTICOS**.
+*somente para Ponto de Captação;
+**somente para Saída do Tratamento.
+***somente para Ponto de Consumo
+[RN003]
+[RN014]
+[AG001]
+ANEXO 4 – Descrição dos arquivos relacionados ao controle semestral de SAC
+Versão: Produção (2026)
+Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+parametro
+Parâmetro
+Condicional
+Alfanumérico
+35
+Tag que indica o parâmetro de cada grupo de parâmetro
+[RN003]
+[RN014]
+[AG001]
+pontoMonitoramento
+Ponto de monitoramento
+Condicional
+Definido em regra
+35
+Deverá ser informado o nome do ponto de monitoramento dentre as opções e regras (PONTO_CAPTACAO, SAIDA_DO_TRATAMENTO, PONTO_DE_CONSUMO).
+[RN003]
+[RN014]
+[AG001]
+campo
+Campo
+Condicional
+Definido em regra
+35
+Deverá ser informado o nome do campo a ser informado na tag valor, dentre as opções e regras.
+Opções: Data da coleta, Data da análise, Resultado, LD e LQ.
+[RN005]
+[AG001]
+valor
+Valor
+Condicional
+Definido em regra
+150
+Deverá ser informado o valor de acordo com as regras existentes para cada campo, de cada parâmetro.
+[RN004]
+[RN006]
+[RN007]
+[RN008]
+[AG001]
+[AG017]
+[AG018]
+[AG021]
+[AG022]
+[AG023]
+[AG024]
+[AG027]
+[AG028]
+codigoPontoCaptacao
+Código do ponto de captação
+Condicional
+Alfanumérico
+6
+Deverá ser informado o código do ponto de captação quando o ponto de monitoramento for ponto de captação. O código do ponto de captação deverá ser obtido para envio das informações por meio das orientações descritas para obtenção dos dados cadastrais da SAC.
+[AG020]
+ANEXO 4 – Descrição dos arquivos relacionados ao controle semestral de SAC
+Versão: Produção (2026)
+2. Estrutura XML e descrição das tags do arquivo de resposta do Controle Semestral de SAC [RN011] Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+codigo
+-
+-
+-
+-
+200, 400
+sucesso
+-
+-
+-
+-
+Valores possíveis: true; false semestres - - - - Tag que agrupa os erros do processamento gerais de uma determinada forma de abastecimento semestre - - - - Tag que agrupa os erros do processamento gerais de uma determinada forma de abastecimento, para um dado semestre
+semestre
+-
+-
+-
+-
+Especifica o semestre/Ano para o qual os dados foram enviados formasAbastecimento - - - - Tag que junta agrupa as formas de abastecimento formaAbastecimento - - - - Tag que agrupa mensagens de uma única forma de abastecimento
+codigoFormaAbastecimento
+-
+-
+-
+-
+Tag que apresenta o código de uma determinada forma de abastecimento avisos - - - - Tag que apresenta os avisos do processamento referentes a uma SAC
+aviso
+-
+-
+-
+-
+Tag que apresenta um determinado aviso acumulado no processamento do arquivo encaminhado pela instituição. Uma mensagem de aviso significa que o dado enviado apresentava alguma situação de destaque, mas que não impedia o salvamento. erros - - - - Tag que agrupa os erros do processamento de uma SAC
+erro
+-
+-
+-
+-
+Tag que apresenta um determinado erro acumulado no processamento do arquivo encaminhado pela instituição. Uma mensagem de erro significa que o dado enviado apresentava erro que impediu a gravação.

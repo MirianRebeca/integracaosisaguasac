@@ -1,0 +1,324 @@
+ANEXO 2 – Descrição dos arquivos relacionados aos cadastros de SAA e SAC
+Versão: Produção (2026)
+OBTENÇÃO DOS DADOS DE CADASTRO DAS FORMAS DE ABASTECIMENTO DE ÁGUA
+Para obter os dados cadastrais de um determinado SAA ou uma SAC, é preciso preencher as tags “codigoFormaAbastecimento” e “anoReferencia”, já que essas informações formam a chave composta de identificação dos cadastros das formas de abastecimento de água no Sisagua.
+O código da forma de abastecimento é formado por 13 caracteres, uma letra (S ou C) + Código do Município de 6 dígitos (IBGE) + sequencial de 6 dígitos para o município. Para Sistema de Abastecimento de Água (SAA), associa-se a letra “S” e para Solução Alternativa Coletiva (SAC), a letra “C”. Esses códigos podem ser obtidos no Sisagua.
+1. Estrutura XML e descrição das tags para solicitação dos dados de Cadastro de SAA e SAC Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação parametros - - - - Tag que agrupa das informações obrigatórias para solicitação dos dados de Cadastro de SAA e SAC.
+codigoFormaAbastecimento
+Código da forma de abastecimento
+Sim
+Alfanumérico
+13
+Alfanumérico.
+[RN002]
+[AG001]
+[AG002]
+[AG003]
+[AG004]
+anoReferencia
+Ano de referência
+Sim
+Numérico (aaaa)
+4
+[AG001]
+[AG002]
+2. Estrutura XML e descrição das tags de resposta às solicitações de dados de Cadastro de SAA e SAC Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+codigo
+-
+-
+-
+-
+Valor:
+200
+mensagem
+-
+-
+-
+-
+Sucesso
+ANEXO 2 – Descrição dos arquivos relacionados aos cadastros de SAA e SAC
+Versão: Produção (2026)
+Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação
+sucesso
+-
+-
+-
+-
+Valores possíveis:
+True; False. formasAbastecimento - - - - Tag que agrupa todas as formas de Abastecimento
+formaAbastecimento
+-
+-
+-
+-
+Tag que reúne os dados de uma determinada forma de abastecimento
+codigo
+Código da forma de abastecimento
+-
+Alfanumérico
+14
+Tag que apresenta o código de uma determinada Forma de Abastecimento
+nome
+Nome da forma de abastecimento
+-
+Alfanumérico
+100
+Tag que apresenta o nome da Forma de Abastecimento etas - - - - Tag que agrupa todas as ETAs eta - - - - Tag que separa as informações de uma ETA
+codigo
+Código da ETA
+-
+Numérico
+9
+Tag que apresenta o código da ETA
+nome
+Nome da ETA
+-
+Alfanumérico
+100
+Tag que apresenta o nome da ETA (apenas para SAA)
+codigoMunicipioEta
+Código do Município da ETA
+-
+Numérico
+40
+Tag que apresenta o código do município da ETA
+No caso do Distrito Federal, observar códigos do APÊNDICE I
+nomeMunicipioEta
+Nome do Município da ETA
+-
+Alfanumérico
+60
+Tag que apresenta o nome do município da ETA
+No caso do Distrito Federal, observar Regiões Administrativas do APÊNDICE I
+carroPipa
+Carro-Pipa
+-
+Boolean
+-
+Tag que informa se o tipo de suprimento é carro-pipa.
+Campo utilizado apenas para SAC. Valor: false; true.
+chafariz
+Chafariz
+-
+Boolean
+-
+Tag que informa se o tipo de suprimento é chafariz.
+Campo utilizado apenas para SAC. Valor: false; true.
+canalizacao
+Canalizacao
+-
+Boolean
+-
+Tag que informa se o tipo de suprimento é canalização.
+Campo utilizado apenas para SAC. Valor: false; true.
+cisterna
+Cisterna
+-
+Boolean
+-
+Tag que informa se o tipo de suprimento é cisterna.
+Campo utilizado apenas para SAC. Valor: false; true.
+fonte
+Fonte
+-
+Boolean
+-
+Tag que informa se o tipo de suprimento é fonte.
+Campo utilizado apenas para SAC. Valor: false; true. pontosCaptacao - - - - Tag que agrupa todos os pontos de captação
+ANEXO 2 – Descrição dos arquivos relacionados aos cadastros de SAA e SAC
+Versão: Produção (2026)
+Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação pontoCaptacao - - - - Tag que agrupa os dados do ponto da captação
+codigo
+Código do Ponto de captação
+-
+Numérico
+9
+Tag que apresenta o código do ponto de captação
+tipoCaptacao
+Tipo da captação (superficial ou subterrânea)
+-
+Alfanumérico
+10
+Tag que apresenta o tipo da captação (superficial ou subterrânea)
+nome
+Nome do Ponto de captação
+-
+Alfanumérico
+100
+Tag que apresenta o nome do ponto de captação
+categoria
+Categoria do manancial superficial ou do ponto de captação subterrânea
+-
+Alfanumérico
+20
+Tag que apresenta a categoria do manancial superficial ou do ponto de captação subterrânea
+codigoMunicipio
+Código do Município do ponto de captação
+-
+Numérico
+40
+Tag que apresenta o código do município do manancial superficial ou do ponto de captação subterrânea
+nomeMunicipio
+Nome do Município do ponto de captação superficial
+-
+Alfanumérico
+60
+Tag que apresenta o nome do município do manancial superficial ou ponto de captação subterrânea populacoesAbastecidas - - - - Tag que agrupa várias populações abastecidas populacaoAbastecida - - - - Tag que agrupa os dados de uma determinada população abastecida
+codigoMunicipio
+Código do Município abastecido
+-
+Numérico
+6
+Tag que apresenta o código do município abastecido
+No caso do Distrito Federal, observar códigos do APÊNDICE I
+nomeMunicipio
+Nome do Município abastecido
+-
+Alfanumérico
+60
+Tag que apresenta o nome de um determinado município abastecido
+No caso do Distrito Federal, observar Regiões Administrativas do APÊNDICE I
+codigo
+Código da população abastecida
+-
+Numérico
+40
+Tag que apresenta o código da população abastecida areasAbastecidas - - - - Tag que agrupa várias áreas abastecidas de uma determinada forma de abastecimento area - - - - Tag que agrupa os dados de uma determinada área de uma
+ANEXO 2 – Descrição dos arquivos relacionados aos cadastros de SAA e SAC
+Versão: Produção (2026)
+Nome da tag Nome do campo Obrigatório Tipo Tamanho Observação população abastecida
+codigo
+Código da Área abastecida
+-
+Numérico
+9
+Tag que apresenta o código da área de uma população abastecida
+nome
+Nome da Área abastecida
+-
+Alfanumérico
+100
+Tag que apresenta o nome da área
+categoriaArea
+Categoria da Área abastecida
+-
+Alfanumérico
+30
+Tag que apresenta a categoria da área
+codigoMunicipioArea
+Código do Município da Área abastecida
+-
+Numérico
+40
+Tag que apresenta o código do município da área
+nomeMunicipioArea
+Nome do Município da Área abastecida
+-
+Alfanumérico
+60
+Tag que apresenta o nome do município da área
+zona
+Zona da Área abastecida
+-
+Alfanumérico
+7
+Tag que apresenta a zona da área (urbana ou rural)
+tpAbastecimento
+Tipo de Abastecimento
+-
+Alfanumérico
+20
+Tag que apresenta o tipo de abastecimento na área (Integral, Parcial ou Somente locais) locaisAbastecidos - - - - Tag que agrupa os locais abastecidos de uma determinada área local - - - - Tag que agrupa os dados de um determinado local de uma determinada área
+codigo
+Código do Local abastecido
+-
+Numérico
+9
+Tag que apresenta o código de um determinado local de uma determinada área
+nome
+Nome do Local abastecido
+-
+Alfanumérico
+100
+Tag que apresenta o nome de um local de uma determinada área
+tipo
+Tipo de Local abastecido
+-
+Alfanumérico
+100
+Tag que apresenta o tipo de um local de uma determinada área
+codigoMunicipioLocal
+Código do Município do Local abastecido
+-
+Numérico
+40
+Tag que apresenta o código do município de um local de uma determinada área
+nomeMunicipioLocal
+Nome do Município do Local abastecido
+-
+Alfanumérico
+60
+Tag que apresenta o nome do município de um local de uma determinada área
+APÊNDICE I – Códigos das Regiões Administrativas do Distrito Federal Código Região Administrativa
+530000
+Guará
+530001
+Brasília
+530002
+Gama
+530003
+Taguatinga
+530004
+Brazlândia
+530005
+Sobradinho
+530006
+Planaltina
+530007
+Paranoá
+530008
+Núcleo Bandeirante
+530009
+Ceilândia
+530011
+Cruzeiro
+530012
+SIA
+530013
+Samambaia
+530014
+Santa Maria
+530015
+Recanto das Emas
+530016
+Lago Sul
+530017
+Riacho Fundo
+530018
+Lago Norte
+530019
+Candangolândia
+530020
+Águas Claras
+530021
+Riacho Fundo II
+530022
+Sudoeste/Octogonal
+530023
+Varjão
+530024
+Park Way
+530025
+São Sebastião
+530026
+Sobradinho II
+530027
+Jardim Botânico
+530028
+Itapoã
+530029
+SCIA
+530030
+Vicente Pires
+530031
+Fercal

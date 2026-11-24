@@ -1,0 +1,62 @@
+ANEXO 6 – Mensagens
+Versão: Produção (2026)
+MENSAGENS Código Mensagem
+AG001
+A informação enviada na tag [nome da tag] não atende ao padrão definido na documentação do webservice.
+AG002
+A tag [nome da tag] é de preenchimento obrigatório.
+AG003
+Forma de abastecimento não existente ou não atualizada para o ano de referência informado. Esse código pode ser obtido no Sisagua.
+AG004
+O código informado não se refere a uma forma de abastecimento de responsabilidade da instituição do usuário autenticado.
+AG005
+O ano de referência informado não corresponde com o conteúdo da amostra enviada.
+AG006
+Nome da ETA não existente para a forma de abastecimento informada. Esse nome pode ser obtido no Webservice ou no próprio Sisagua.
+AG007
+Código de Município não existente para a forma de abastecimento informada. Esse código pode ser obtido no Webservice.
+AG008
+Os dados de Controle Semestral da ETA foram enviados com sucesso.
+AG009
+Os dados de Controle Semestral do Sistema de distribuição foram enviados com sucesso.
+AG010
+Os dados de Controle Semestral da ETA foram recusados, pois não atenderam aos requisitos da RN26.9.
+AG011
+Os dados de Controle Semestral do Sistema de distribuição do município foram recusados, pois não atenderam aos requisitos da RN26.9
+AG012
+Os dados de Controle Semestral foram enviados com sucesso.
+AG013
+Os dados de Controle Semestral da SAC foram recusados, pois não atenderam aos requisitos da RN26.9
+AG014
+O valor informado na tag semestre deve obedecer a RN26.10.
+AG015
+O valor inserido na tag cevs será desprezado, esse campo só se aplica ao estado de São Paulo
+AG016
+O valor informado na tag dataPreenchimento deve obedecer a RN26.10.
+AG017
+A data informada para “Data da análise” deve ser menor ou igual a data corrente e maior ou igual a data informada para a “Data da coleta”.
+ANEXO 6 – Mensagens
+Versão: Produção (2026)
+Código Mensagem
+AG018
+O valor informado na tag dataColeta do grupo Substâncias Inorgânicas, parâmetro [parametro], ponto de monitoramento [pontoMonitoramento] deve obedecer a RN26.8.
+AG019
+O ponto de captação informado não existe para essa Estação de tratamento.
+AG020
+O ponto de captação informado não existe para essa SAC.
+AG021
+O valor de resultado não pode ser zero. Por isso foi desprezado o dado enviado para o grupo [grupoParametro], parâmetro [parâmetro], do ponto de monitoramento [pontoMonitoramento].
+AG022
+O valor de [campo] não pode ser zero, para o grupo [grupoParametro], parâmetro [parâmetro], do ponto de monitoramento [pontoMonitoramento].
+AG023
+O valor informado no campo LQ deve ser maior ou igual ao valor informado no campo LD.
+AG024
+O resultado não pode ser inferior ao LD ou LQ informado no grupo [grupoParametro], parâmetro [parâmetro], do ponto de monitoramento [pontoMonitoramento].
+AG025
+Conjunto de dados inválido para a tag [nome da tag] e ponto de monitoramento [pontoMonitoramento] da ETA [nome da ETA]. Por isso esses dados serão desprezados.
+AG026
+Conjunto de dados inválido para a tag [nome da tag] e ponto de monitoramento Sistema de distribuição do sistema de distribuição de [codigoMunicipio]. Por isso esses dados serão desprezados.
+AG027
+Já existiam valores no Sisagua para o grupo [grupoParametro], parâmetro [parametro], do pontoMonitoramento [pontoMonitoramento] e esses foram substituídos pelas informações enviadas via webservice.
+AG028
+Já existia valor no Sisagua para a tag [nome da tag] e esse foi substituído pela informação enviada via webservice.

@@ -1,0 +1,43 @@
+ANEXO 1 – Orientações gerais sobre o Webservice
+Versão: 17/01/2022
+Página 1 de 3
+WebService para comunicação entre o Sisagua e os sistemas de informações dos prestadores de serviço de abastecimento de água
+O presente documento contém orientações sobre a comunicação entre o Sisagua e os sistemas de informação das empresas que prestam serviços de abastecimento de água para consumo humano, explicitando os procedimentos, tanto para obtenção dos dados cadastrais dos sistemas de abastecimento de água (SAA) ou soluções alternativas coletivas (SAC) do Sisagua, quanto para o envio de dados do Controle Mensal e Semestral de SAA e SAC ao Sisagua.
+A comunicação entre os sistemas de informação ocorrerá por meio de Webservice - componente que permitirá as aplicações receberem e enviarem dados em formato XML. Webservice – n° 1
+Possui 3 métodos:
+• consultarFormaAbast (obtenção dos dados cadastrais de SAA e SAC);
+• empresaEnviarControleSaaMensal (envio de dados do Controle Mensal de SAA); e
+• empresaEnviarControleSacMensal (envio de dados do Controle Mensal de SAC).
+Este serviço pode ser acessado mediante autenticação com os dados de acesso ao Sisagua (usuário e senha) para perfil “Empresa” devidamente autorizado por meio dos links:
+AMBIENTE DE TESTES (Sisagua treinamento)
+https://sisagua-treinamento.saude.gov.br/sisagua/integracao/controlemensal
+OBS: recomendamos que inicialmente sejam feitos testes neste ambiente para evitar entrada de dados incoerentes no Sisagua produção
+AMBIENTE REAL (Sisagua produção)
+http://sisagua.saude.gov.br/sisagua/integracao/controlemensal?wsdl
+ATENÇÃO: As orientações para solicitação de acesso ao estão descritas no documento “Solicitando acesso ao Sisagua” disponível na página inicial do sistema: http://sisagua.saude.gov.br/sisagua
+É necessário que você tenha acesso ao Sisagua treinamento para realizar os testes e ao Sisagua produção para envio dos dados oficiais.
+ANEXO 1 – Orientações gerais sobre o Webservice
+Versão: 17/01/2022
+Página 2 de 3
+Webservice – n° 2
+É o webservice de controle semestral e contém 2 métodos:
+• empresaEnviarControleSaaSemestral (envio de dados do Controle Semestral de SAA); e
+• empresaEnviarControleSacSemestral (envio de dados do Controle Semestral de SAC).
+Este serviço pode ser acessado mediante autenticação com os dados de acesso ao Sisagua (usuário e senha) para perfil “Empresa” devidamente autorizado por meio dos links:
+AMBIENTE DE TESTES (Sisagua treinamento)
+https://sisagua-treinamento.saude.gov.br/sisagua/integracao/controlesemestral?wsdl
+AMBIENTE REAL (Sisagua produção)
+http://sisagua.saude.gov.br/sisagua/integracao/controlesemestral
+ORIENTAÇÕES GERAIS
+É importante esclarecer que o acesso permite consultar e enviar apenas os dados referentes aos Sistemas de Abastecimento de Água (SAA) e Soluções Alternativas Coletivas (SAC) de responsabilidade da instituição de acesso.
+Tanto o XML dos dados cadastrais dos SAA ou SAC, como os dados do Controle mensal de SAA ou SAC são estruturados por meio de tag’s que definem a organização das informações. Por exemplo: o código do município é identificado pela tag “codigoMunicípio”, conforme ilustrado a seguir:
+<codigoMunicipio>310620</codigoMunicipio>.
+Os documentos intitulados “Descrição dos arquivos relacionados aos cadastros de SAA e SAC”, “Descrição dos arquivos relacionados ao controle mensal de SAA” e “Descrição dos arquivos relacionados ao controle mensal de SAC” apresentam as subdivisões do XML e descrição das tag’s existentes.
+O documento “Regras de negócio” apresenta as regras de validação e armazenamento das informações.
+O documento “Mensagens” apresenta as mensagens de comunicação, que serão apresentadas nas situações previstas no serviço.
+ANEXO 1 – Orientações gerais sobre o Webservice
+Versão: 17/01/2022
+Página 3 de 3
+Por fim, o documento “Opções tags ControleMensal” contém um resumo das opções pré-definidas de preenchimento das tags e o documento “Exemplo XML” contém um exemplo de XML preenchido com os dados fictícios de controle mensal de um SAA.
+Os arquivos exemplo XML e um vídeo de configuração do SoapUI podem ser obtidos no link a seguir:
+https://drive.google.com/drive/folders/1GOHWnOtYSOhl0Fd_qxwcZbhHgDcomYWU?usp=sharing.

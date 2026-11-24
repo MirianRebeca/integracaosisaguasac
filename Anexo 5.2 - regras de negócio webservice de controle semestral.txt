@@ -1,0 +1,1105 @@
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+REGRAS DE NEGÓCIO
+[RN001] Preenchimento de um controle semestral
+Para realizar o preenchimento de um controle semestral é necessário que já exista no Sisagua o cadastro com Status Atualizado do SAA ou da SAC que se deseja enviar os dados.
+[RN002] Validar Instituição
+Quando for realizada a tentativa de obtenção dos dados de Cadastro de SAA ou SAC e de envio dos dados do Controle Semestral, deve-se verificar se o usuário possui algum dos perfis de acesso Empresa (Empresa Regional – Administração Central, Empresa Regional – Regional, Empresa Regional - Municipal e Empresa Municipal) e se o código informado (codigoFormaAbastecimento do SAA ou da SAC) possui vinculação à instituição de acesso do usuário autenticado. Caso não possua vinculação, deve-se bloquear a consulta ou o envio.
+[RN003] Opções de entradas de dados para o controle semestral
+Opções para ponto de monitoramento de SAA: Ponto de captação, saída do tratamento e sistema de distribuição.
+Opções para ponto de monitoramento de SAC: Ponto de captação, saída de tratamento e ponto de consumo. Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Substâncias Inorgânicas
+Antimônio - VMP: 0,006 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Arsênio - VMP: 0,01 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Bário - VMP:0,7 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Cádmio - VMP: 0,003 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Chumbo - VMP:0,01 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Cobre - VMP: 2 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Cromo - VMP: 0,05 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Mercúrio Total - VMP: 0,001 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Níquel - VMP: 0,07 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Nitrato (como N) - VMP:10 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Nitrito (como N) - VMP: 1 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Selênio - VMP: 0,04 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Urânio - VMP: 0,03 mg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Substâncias orgânicas
+1,2 Dicloroetano - VMP: 5 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Acrilamida - VMP: 0,5 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Benzeno - VMP: 5 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Benzo[a]pireno - VMP: 0,4 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Cloreto de Vinila - VMP: 0,5 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Di (2-etilhexil) ftalato - VMP: 8 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Diclorometano - VMP: 20 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Dioxano - VMP: 48 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Epicloridrina- VMP: 0,4 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Etilbenzeno- VMP: 300 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Pentaclorofenol - VMP: 9 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Tetracloreto de Carbono - VMP: 4 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tetracloroeteno - VMP: 40 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tolueno - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tricloroeteno - VMP: 4 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Xilenos - VMP: 500 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Agrotóxicos
+2,4 D - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Alacloro - VMP: 20 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Aldicarbe + Aldicarbesulfona + Aldicarbesulfóxido - VMP: 10 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Aldrin + Dieldrin - VMP: 0,03 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Ametrina - VMP: 60 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Atrazina + S-Clorotriazinas (Deetil-Atrazina – Dea, Deisopropil-Atrazina – Dia e Diaminoclorotriazina Dact) - VMP: 2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Carbendazim - VMP: 120 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Carbofurano - VMP: 7 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Resultado
+Data da análise
+LD(μg/L)
+LQ(μg/L)
+Ciproconazol - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Clordano - VMP: 0,2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Clorotalonil - VMP: 45 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Clorpirifós + clorpirifós-oxon - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+DDT + DDD + DDE - VMP: 1 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Difenoconazol - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Dimetoato + ometoato - VMP: 1,2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Diuron - VMP: 20 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Epoxiconazol - VMP: 60 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Fipronil - VMP: 1,2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Flutriafol - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Glifosato + AMPA - VMP: 500 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Hidroxi-Atrazina - VMP: 120 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Lindano (gama HCH) - VMP: 2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Malationa - VMP: 60 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Mancozebe + ETU - VMP: 8 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Metamidofós + Acefato - VMP: 7 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Metolacloro - VMP: 10 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Metribuzim - VMP: 25 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Molinato - VMP: 6 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Paraquate - VMP: 13 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Picloram - VMP: 60 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Profenofós - VMP: 0,3 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Propargito - VMP: 30 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Protioconazol + ProtioconazolDestio - VMP: 3 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Simazina - VMP: 2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Tebuconazol - VMP: 180 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Terbufós - VMP: 1,2 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tiametoxam - VMP: 36 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tiodicarbe - VMP: 90 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Tiram - VMP: 6 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Trifluralina - VMP: 20 μg/L
+Ponto de captação
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (μg/L)
+LD (μg/L)
+LQ (μg/L)
+Produto Secundários de Desinfecção
+2, 4, 6 -Triclorofenol - VMP: 0,2 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+2, 4 - Diclorofenol - VMP: 0,2 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Ácidos haloacéticos total - VMP: 0,08 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Bromato - VMP: 0,01 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Cloraminas total - VMP: 4 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Clorato - VMP: 0,7 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Clorito - VMP: 0,7 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+N-nitrosodimetilamina - VMP: 0,0001 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Trihalometanos Total - VMP: 0,1 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Radioatividade
+Atividade alfa total - VMP: 0,5 Bq/L
+Sistema de distribuição
+Ponto de consumo
+Data da coleta
+Data da análise
+Resultado (Bq/L)
+LD (Bq/L)
+LQ (Bq/L)
+Atividade alfa total (após subtração de K-40) - VMP: 0,5 Bq/L
+Sistema de distribuição
+Ponto de consumo
+Data da coleta
+Data da análise
+Resultado (Bq/L)
+LD (Bq/L)
+LQ (Bq/L)
+Atividade beta total - VMP: 1,0 Bq/L -
+Sistema de distribuição
+Ponto de consumo
+Data da coleta
+Data da análise
+Resultado (Bq/L)
+LD (Bq/L)
+LQ (Bq/L)
+Atividade beta total (após subtração de K-40) - VMP: 1,0 Bq/L -
+Sistema de distribuição
+Ponto de consumo
+Data da coleta
+Data da análise
+Resultado (Bq/L)
+LD (Bq/L)
+LQ (Bq/L)
+Parâmetros Organolépticos
+1,2 Diclorobenzeno - VMP: 0,001 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+1,4 Diclorobenzeno - VMP: 0,0003 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Alumínio - VMP: 0,2 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Amônia (como N) - VMP: 1,2 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Cloreto - VMP: 250 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Dureza total - VMP: 300 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Ferro – VMP: 0,3 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Gosto e odor – VMP: 6 Intensidade
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Manganês - VMP: 0,1 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Monoclorobenzeno –VMP: 0,02 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Sódio - VMP: 200 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção de Grupo de parâmetros Opção de parâmetro Opção de Ponto de Monitoramento Opção de campo
+Sólidos dissolvidos totais - VMP: 500 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Sulfato - VMP: 250 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Sulfeto de hidrogênio -VMP: 0,05 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+Zinco VMP - 5,0 mg/L
+Saída do tratamento
+Sistema de distribuição
+Data da coleta
+Data da análise
+Resultado (mg/L)
+LD (mg/L)
+LQ (mg/L)
+[RN004] Opções para tag Valor
+Quando a tag “campo” for “Resultado” a tag “valor” só poderá aceitar os valores MENOR_LQ, MENOR _LD, ou um valor numérico.
+Observação: Os resultados e valores de LD e LQ devem ser reportados na mesma unidade de medida para qual o Valor Máximo Permitido é estabelecido na Norma de Qualidade da Água para Consumo Humano. Exemplo: Substâncias químicas inorgânicas (em mg/L), Agrotóxicos (em μg/L).
+[RN005] Opções para a tag campo Opção na tag campo Tipo Tamanho Regra
+Data da coleta
+Data
+10
+[RN008]
+Data da análise
+Data
+10
+[RN008]
+Resultado
+Alfanumérico
+12
+LQ
+Numérico
+6
+LD
+Numérico
+6
+[RN006] Campo LD e LQ
+O valor informado no campo “LQ” deve ser maior ou igual ao valor informado no campo “LD”.
+[RN007] Campos numéricos (geral)
+Os campos devem atender as seguintes condições:
+- Máximo de 12 caracteres (11 numéricos e 1 virgula), permitindo apenas 5 dígitos antes e 6 após (exemplo: 99999,999999);
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+- Permitida a existência de apenas uma vírgula e, quando digitada, deverá conter pelo menos 1 e no máximo 5 caracteres numéricos antes e pelo menos 1 e no máximo 6 dígitos após;
+- Não é aceito ponto (.) como separador de decimal.
+[RN008] Data da coleta e data da análise
+O valor informado deve possuir formato Data (DD/MM/AAAA), estar compreendida no semestre de referência e ser menor ou igual à data de preenchimento do formulário (dataPreenchimento).
+A data da análise deve ser maior ou igual à data de coleta.
+[RN009] Validação do envio de um controle semestral de SAA (ETA ou Sistema de distribuição) ou SAC
+Os dados de um Controle Semestral de um determinado SAA (ETA ou Sistema de Distribuição) ou uma SAC somente serão recebidos e gravados no Sisagua se os campos obrigatórios iniciais (código da forma de abastecimento, ano de referência semestre e, no caso de SAA, o nome da ETA ou código do município do sistema de distribuição) e os de identificação do formulário (dataPreenchimento, responsavelPelasInformacoes e cargoResponsavel) possuírem valores válidos e ainda for satisfeita uma das condições abaixo:
+ A tag “naoOperouSemestre” recebeu valor false, indicando que a SAC ou a ETA (SAA) operou no semestre ou que o sistema de distribuição (SAA) recebeu água no semestre;
+ Pelo menos um parâmetro de tratamentoAgua da SAC ou SAA (ETA ou Sistema de Distribuição) possua informações válidas enviadas para os campos.
+Após o envio dos dados para gravação, o sistema deverá:
+ Verificar se já existem no Sisagua informações para os campos obrigatórios de identificação do formulário (dataPreenchimento, responsavelPelasInformacoes e cargoResponsavel). Caso existam, devem ser sobrepostos e emitir uma mensagem de retorno.
+ Verificar se existem dados no Sisagua para cada parâmetro e pontoMonitoramento do Controle Semestral do tratamentoAgua da SAC ou SAA (ETA ou Sistema de Distribuição) (município).
+ Caso os dados já existam e não estejam sendo enviados novos valores, os existentes devem ser mantidos.
+ Caso os dados já existam e estejam sendo enviados novos valores, os existentes deverão ser sobrepostos e emitida uma mensagem informando a substituição dos mesmos.
+Após a gravação dos dados, a(s) aba(s) do Sisagua referente ao(s) semestre(semestres) em que o Controle semestral do SAA ou SAC foi(foram) validado(s) deverá(ão) seguir o comportamento do sistema, ou seja, após informado, a aba deverá mudar de cor, deixando de ser vermelha.
+[RN010] anoReferencia e data de Preenchimento
+O valor informado na tag “anoReferencia” deve possuir formato data (AAAA), sendo aceito como valor mínimo 2023 e valor máximo o ano corrente.
+O valor informado na tag “dataPreenchimento” deve possuir formato data (DD/MM/AAAA), sendo aceito como valor mínimo 01/01/[anoReferência] e valor máximo a data corrente.
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+[RN011] Validação dos dados do arquivo
+O sistema deverá realizar a validação dos dados do arquivo conforme a necessidade e à medida que for localizando inconsistências, deverá registrá-las em um arquivo que será montado no decorrer do processo e posteriormente enviado para a instituição.
+Caso o dado seja processado corretamente, deverá também adicionar a informação no arquivo que será posteriormente enviado para a instituição.
+[RN012] CEVS
+O sistema deve validar o preenchimento obrigatório sempre que o 2° caractere da forma de abastecimento for igual a 3 e, simultaneamente, o 3° caractere do código da forma de abastecimento for igual a 5, indicando que o SAA ou a SAC é de município do estado de São Paulo
+[RN013] Semestre de referência
+O sistema deve receber na tag semestre o valor 1 para o primeiro semestre e o valor 2 para o segundo semestre.
+[RN014] Recebimento das tag
+O sistema deve receber nas tag grupoParametro e parametro os registros conforme tabela abaixo: Opção na tag grupoParametro Valor na tag parametro
+SUBSTANCIAS_INORGANICAS
+ANTIMONIO
+ARSENIO
+BARIO
+CADMIO
+CHUMBO
+COBRE
+CROMO
+MERCURIO
+NIQUEL
+NITRATO
+NITRITO
+SELENIO
+URANIO
+SUBSTANCIAS_ORGANICAS
+_1_2_ DICLOROETANO
+ACRILAMIDA
+BENZENO
+BENZO_A_PIRENO
+CLORETO_VINILA
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção na tag grupoParametro Valor na tag parametro
+DI_2_ETILHEXIL
+DICLOROMETANO
+DIOXANO
+EPICLORDRINA
+ETILBENZENO
+PENTACLOROFENOL
+TETRACLORETO_CARBONO
+TETRACLOROETENO
+TOLUENO
+TRICLOROETENO
+XILENOS
+AGROTOXICOS
+_24D
+ALACLOR
+ALDICARBE
+ALDRIN
+AMETRINA
+ATRAZINA
+CARBENDAZIM
+CARBOFURANO
+CIPROCONAZOL
+CLORDANO
+CLOROTALONIL
+CLORPIRIFOS
+DDT_DDD_DDE
+DIFENOCONAZOL
+DIMETOATO_OMEOTATO
+DIURON
+EPOXICONAZOL
+FIPRONIL
+FLUTRIAFOL
+GLIFOSATO_AMPA
+HIDROXI_ATRAZINA
+LINDANO
+MALATIONA
+MANCOZEBE
+METAMIDOFOS_ACETATO
+METOLACLORO
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção na tag grupoParametro Valor na tag parametro
+METRIBUZIM
+MOLINATO
+PARAQUATE
+PICLORAM
+PROFENOFOS
+PROPARGITO
+PROTIOCONAZOL_PROTICONAZOLDESTIO
+SIMAZINA
+TEBUCONAZOL
+TERBUFOS
+TIAMETOXAM
+TIODICARBE
+TIRAM
+TRIFLURALINA
+OUTROS
+CONDUTIVIDADE_ELETRICA
+COR_VERDADEIRA
+DEMANDA_BIOQUIMICA_OXIGENIO
+DEMANDA_QUIMICA_OXIGENIO
+FOSFORO_TOTAL
+NITROGENIO_AMONIACAL_TOTAL
+OXIGENIO_DISSOLVIDO
+PH
+TURBIDEZ
+PRODUTOS_SECUNDARIOS_DESINFECCAO
+PRODUTOS_SECUNDARIOS_DESINFECCAO_1_BIMESTRE
+PRODUTOS_SECUNDARIOS_DESINFECCAO_2_BIMESTRE
+PRODUTOS_SECUNDARIOS_DESINFECCAO_3_BIMESTRE
+_2_4_6_TRICLOROFENOL
+_2_4_DICLOROFENOL
+ACIDOS_HALOACETICOS
+BROMATO
+CLORAMINAS
+CLORATO
+CLORITO
+N_NITROSODIMETILAMINA
+TRIHALOMETANOS
+RADIOATIVIDADE
+ALFA_TOTAL
+ALFA_TOTAL_K_40
+BETA_TOTAL
+BETA_TOTAL _K_40
+PARAMETROS_ORGANOLEPTICOS
+_1_2_DICLOROBENZENO
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Opção na tag grupoParametro Valor na tag parametro
+_1_4_DICLOROBENZENO
+ALUMINIO
+AMONIA
+CLORETO
+DUREZA_TOTAL
+FERRO
+GOSTO_ODOR
+MANGANES
+MONOCLOROBENZENO
+SODIO
+SOLIDOS_DISSOLVIDOS_TOTAIS
+SULFATO
+SULFETO_HIDROGENIO
+ZINCO
+Para a tag grupoParametro: Grupo de parâmetros Valor na tag grupoParametro
+Substâncias Inorgânicas
+SUBSTANCIAS_INORGANICAS
+Substâncias Orgânicas
+SUBSTANCIAS_ORGANICAS
+Agrotóxicos
+AGROTOXICOS
+Outros
+OUTROS
+Produtos Secundários de Desinfecção (SAC)
+PRODUTOS_SECUNDARIOS_DESINFECCAO
+Produtos Secundários de Desinfecção - 1ºBimestre (SAA)
+PRODUTOS_SECUNDARIOS_DESINFECCAO_1_BIMESTRE
+Produtos Secundários de Desinfecção - 2ºBimestre (SAA)
+PRODUTOS_SECUNDARIOS_DESINFECCAO_2_BIMESTRE
+Produtos Secundários de Desinfecção - 3ºBimestre (SAA)
+PRODUTOS_SECUNDARIOS_DESINFECCAO_3_BIMESTRE
+Radioatividade
+RADIOATIVIDADE
+Parâmetros Organolépticos
+PARAMETROS_ORGANOLEPTICOS
+ANEXO 5 – Regras de negócio
+Versão: Produção (2026)
+Para a tag pontoMonitoramento: Ponto de monitoramento Valor na tag pontoMonitoramento
+Ponto de captação
+PONTO_CAPTACAO
+Saída do tratamento
+SAIDA_DO_TRATAMENTO
+Sistema de distribuição
+SISTEMA_DISTRIBUICAO
+Ponto de consumo
+PONTO_DE_CONSUMO
