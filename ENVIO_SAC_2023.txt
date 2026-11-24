@@ -1,0 +1,53 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.ws.sisagua.saude.gov.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <end:empresaEnviarControleSacSemestral>
+         <!--Zero or more repetitions:-->
+         <solucaoAbastecimentoSAC>
+            <codigoFormaAbastecimento>?</codigoFormaAbastecimento>
+            <anoReferencia>?</anoReferencia>
+            <periodos>
+               <!--1 or more repetitions:-->
+               <periodo>
+                  <semestre>?</semestre>
+                  <!--Optional:-->
+                  <tratamentoAgua>
+                     <!--Optional:-->
+                     <cevs>?</cevs>
+                     <dataPreenchimento>?</dataPreenchimento>
+                     <responsavelPelasInformacoes>?</responsavelPelasInformacoes>
+                     <cargoResponsavel>?</cargoResponsavel>
+                     <naoOperouSemestre>?</naoOperouSemestre>
+                     
+                     <analisesNovaNorma>
+                        <!--1 or more repetitions:-->
+                        <analiseNovaNorma>
+                           <grupoParametro>?</grupoParametro>
+                           <parametro>?</parametro>
+                           <pontoMonitoramento>PONTO_CAPTACAO</pontoMonitoramento>
+                           <campo>?</campo>
+                           <valor>?</valor>
+                           <codigoPontoCaptacao>?</codigoPontoCaptacao>
+                        </analiseNovaNorma>
+			<analiseNovaNorma>
+                           <grupoParametro>?</grupoParametro>
+                           <parametro>?</parametro>
+                           <pontoMonitoramento>SAIDA_DO_TRATAMENTO</pontoMonitoramento>
+                           <campo>?</campo>
+                           <valor>?</valor>
+                        </analiseNovaNorma>
+			<analiseNovaNorma>
+                           <grupoParametro>?</grupoParametro>
+                           <parametro>?</parametro>
+                           <pontoMonitoramento>PONTO_DE_CONSUMO</pontoMonitoramento>
+                           <campo>?</campo>
+                           <valor>?</valor>
+                        </analiseNovaNorma>
+                     </analisesNovaNorma>
+                  </tratamentoAgua>
+               </periodo>
+            </periodos>
+         </solucaoAbastecimentoSAC>
+      </end:empresaEnviarControleSacSemestral>
+   </soapenv:Body>
+</soapenv:Envelope>
