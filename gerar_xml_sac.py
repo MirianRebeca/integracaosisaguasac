@@ -298,7 +298,6 @@ def resultado_xml(v, parametro):
 
     return n
 
-
 def criar_elemento(pai, nome, valor):
     e = ET.SubElement(pai, nome)
     e.text = str(valor)
@@ -598,7 +597,6 @@ def consultar_sisagua(codigo_sac, ano, usuario, senha):
 
 
 def testar_conexao_sisagua():
-
     servidor = "sisagua.saude.gov.br"
     caminho = "/sisagua/integracao/controlesemestral"
 
@@ -772,22 +770,20 @@ def enviar_xml(arquivo_xml, usuario, senha):
 # SELEÇÃO DOS RELATÓRIOS
 # ============================================================
 
-def selecionar_relatorios(ws):
+def listar_relatorios(ws):
     relatorios = []
-    clientes = set()
+    clientes = {}
 
     for col_data in range(4, ws.max_column + 1, 2):
         cliente = texto(ws.cell(2, col_data).value)
-
         if not cliente:
             continue
 
         coleta = extrair_data(ws.cell(4, col_data).value)
-
         if not coleta:
             continue
 
-        relatorios.append({
+        registro = {
             "col_data": col_data,
             "col_resultado": col_data + 1,
             "cliente": cliente,
@@ -797,26 +793,47 @@ def selecionar_relatorios(ws):
             "rt": texto(ws.cell(5, col_data).value),
             "cargo": texto(ws.cell(6, col_data).value),
             "nome_relatorio": texto(ws.cell(1, col_data).value),
-        })
-
-        clientes.add(cliente)
+        }
+        relatorios.append(registro)
+        clientes.setdefault(registro["cliente_norm"], cliente)
 
     if not relatorios:
-        raise ValueError(
-            "Não encontrei relatórios válidos na aba LABB."
+        raise ValueError("Não encontrei relatórios válidos na aba LABB.")
+
+    nomes = sorted(clientes.values(), key=str.casefold)
+    print("\nCLIENTES ENCONTRADOS NA ABA LABB")
+    for i, nome in enumerate(nomes, 1):
+        qtd = sum(1 for r in relatorios if r["cliente_norm"] == chave_cliente(nome))
+        print(f"  {i}. {nome} ({qtd} relatórios)")
+
+    while True:
+        escolha = input(
+            "\nDigite os números dos clientes separados por vírgula "
+            "ou TODOS para processar a lista inteira: "
+        ).strip()
+
+        if escolha.upper() == "TODOS":
+            escolhidos = nomes
+            break
+
+        try:
+            indices = [int(x.strip()) for x in escolha.split(",") if x.strip()]
+            if not indices or len(set(indices)) != len(indices):
+                raise ValueError
+            if any(i < 1 or i > len(nomes) for i in indices):
+                raise ValueError
+            escolhidos = [nomes[i - 1] for i in indices]
+            break
+        except ValueError:
+            print("Seleção inválida. Exemplo: 1, 3, 5 ou TODOS.")
+
+    return [
+        (
+            nome,
+            [r for r in relatorios if r["cliente_norm"] == chave_cliente(nome)]
         )
-
-    cliente_escolhido = pedir_opcao(
-        "CLIENTES ENCONTRADOS NA ABA LABB",
-        sorted(clientes, key=str.casefold)
-    )
-
-    selecionados = [
-        r for r in relatorios
-        if r["cliente_norm"] == chave_cliente(cliente_escolhido)
+        for nome in escolhidos
     ]
-
-    return cliente_escolhido, selecionados
 
 
 # ============================================================
@@ -897,8 +914,7 @@ def gerar_xml(
         data_preenchimento
     )
     criar_elemento(
-        tratamento,
-        "responsavelPelasInformacoes",
+        tratamento,        "responsavelPelasInformacoes",
         rt
     )
     criar_elemento(
@@ -1197,8 +1213,7 @@ def gerar_xml(
 
 
 #======================
-#PARA SALVAR
-#======================
+#PARA SALVAR#======================
 
 def localizar_estabelecimento_sisagua(wb, cliente):
     if ABA_SISAGUA not in wb.sheetnames:
@@ -1497,7 +1512,6 @@ def baixar_relatorio_sisagua(
                 "and normalize-space()='CONTROLE']"
             ))
         )
-
         acoes.move_to_element(menu_controle).perform()
 
         print("Acessando SOLUÇÃO ALTERNATIVA COLETIVA...")
@@ -1612,173 +1626,58 @@ def baixar_relatorio_sisagua(
             driver.quit()
 
 # ============================================================
-# EXECUÇÃO PRINCIPAL
+# EXECUÇÃO PRINCIPAL - PROCESSAMENTO EM LOTE
 # ============================================================
 
-def main():
+def processar_cliente(
+    wb, ws, ws_rts, cliente_escolhido, selecionados,
+    ano, semestre, data_preenchimento
+):
+    print("\n" + "=" * 70)
+    print(f"INICIANDO CLIENTE: {cliente_escolhido}")
+    print("=" * 70)
 
-    if not ARQUIVO_EXCEL.exists():
-        raise FileNotFoundError(
-            f"Não encontrei {ARQUIVO_EXCEL.name}. "
-            "Deixe o script na mesma pasta da planilha."
-        )
-
-    wb = load_workbook(
-        ARQUIVO_EXCEL,
-        data_only=True
-    )
-
-    if ABA_LABB not in wb.sheetnames:
-        raise ValueError(
-            f"A aba {ABA_LABB!r} não existe na planilha."
-        )
-
-    if ABA_RTS not in wb.sheetnames:
-        raise ValueError(
-            f"A aba {ABA_RTS!r} não existe na planilha."
-        )
-
-    ws = wb[ABA_LABB]
-    ws_rts = wb[ABA_RTS]
-
-    cliente_escolhido, selecionados = selecionar_relatorios(ws)
-
-    print(f"\nCliente selecionado: {cliente_escolhido}")
-
-
-    #===================
-    #PARA SALVAR
-    #===================
-
-    # Localiza o estabelecimento e o perfil na aba SISAGUA.
     nome_estabelecimento, perfil_sisagua = (
-        localizar_estabelecimento_sisagua(
-            wb,
-            cliente_escolhido
-        )
+        localizar_estabelecimento_sisagua(wb, cliente_escolhido)
     )
-
     print(f"Estabelecimento SISAGUA: {nome_estabelecimento}")
     print(f"Perfil SISAGUA: {perfil_sisagua}")
 
-
-
-    # Ano e semestre derivados das datas de coleta.
-    datas_coleta = [
-        data_obj(r["coleta"])
-        for r in selecionados
-    ]
-
-    anos = {d.year for d in datas_coleta}
-    semestres = {
-        1 if d.month <= 6 else 2
-        for d in datas_coleta
-    }
-
-    if len(anos) != 1 or len(semestres) != 1:
-        raise ValueError(
-            "Os relatórios selecionados têm datas de coleta "
-            "de anos/semestres diferentes. Separe os lançamentos."
-        )
-
-    ano_default = str(next(iter(anos)))
-    semestre_default = str(next(iter(semestres)))
-
-    ano = pedir_texto(
-        "Ano de referência",
-        ano_default
-    )
-
-    semestre = pedir_texto(
-        "Semestre (1 ou 2)",
-        semestre_default
-    )
-
-    if (
-        not ano.isdigit()
-        or len(ano) != 4
-        or semestre not in {"1", "2"}
-    ):
-        raise ValueError("Ano ou semestre inválido.")
-
-    hoje = date.today()
-
-    data_preenchimento = pedir_texto(
-        "Data de preenchimento (DD/MM/AAAA)",
-        hoje.strftime("%d/%m/%Y")
-    )
-
-    data_obj(data_preenchimento)
-
-    # Seleciona RT responsável.
     rts = sorted(
-        {
-            r["rt"]
-            for r in selecionados
-            if r["rt"]
-        },
+        {r["rt"] for r in selecionados if r["rt"]},
         key=str.casefold
     )
-
     if not rts:
-        raise ValueError(
-            "Nenhum RT foi encontrado na linha 5 dos relatórios."
-        )
+        raise ValueError("Nenhum RT foi encontrado na linha 5 dos relatórios.")
 
     if len(rts) == 1:
         rt = rts[0]
-        print(f"\nRT identificado: {rt}")
+        print(f"RT identificado: {rt}")
     else:
         rt = pedir_opcao(
-            "Selecione o RT responsável pelo formulário:",
+            f"Selecione o RT responsável por {cliente_escolhido}:",
             rts
         )
 
     cargos = sorted({
-        r["cargo"]
-        for r in selecionados
-        if (
-            normalizar_nome(r["rt"]) == normalizar_nome(rt)
-            and r["cargo"]
-        )
+        r["cargo"] for r in selecionados
+        if normalizar_nome(r["rt"]) == normalizar_nome(rt) and r["cargo"]
     })
-
     if not cargos:
-        raise ValueError(
-            f"Não encontrei cargo para o RT {rt}."
-        )
+        raise ValueError(f"Não encontrei cargo para o RT {rt}.")
 
-    if len(cargos) == 1:
-        cargo = cargos[0]
-    else:
-        cargo = pedir_opcao(
-            "Selecione o cargo do RT:",
-            cargos
-        )
-
-    # Código SAC obtido da aba RTs.
-    codigo_sac = localizar_codigo_sac(
-        ws_rts,
-        cliente_escolhido
+    cargo = cargos[0] if len(cargos) == 1 else pedir_opcao(
+        f"Selecione o cargo do RT {rt}:",
+        cargos
     )
 
-    print(f"\nCódigo da forma de abastecimento: {codigo_sac}")
+    codigo_sac = localizar_codigo_sac(ws_rts, cliente_escolhido)
+    print(f"Código da forma de abastecimento: {codigo_sac}")
 
-    # Credenciais SISAGUA.
     usuario, senha = obter_credenciais(wb, rt)
 
-    # Consulta automática ao SISAGUA.
-    cevs, pontos = consultar_sisagua(
-        codigo_sac,
-        ano,
-        usuario,
-        senha
-    )
-
-    # Seleciona o ponto de captação retornado.
-    codigos_pontos = sorted(
-        {p["codigo"] for p in pontos}
-    )
+    cevs, pontos = consultar_sisagua(codigo_sac, ano, usuario, senha)
+    codigos_pontos = sorted({p["codigo"] for p in pontos if p.get("codigo")})
 
     if not codigos_pontos:
         raise ValueError(
@@ -1788,82 +1687,116 @@ def main():
 
     if len(codigos_pontos) == 1:
         codigo_ponto_captacao = codigos_pontos[0]
-        print(
-            "\nPonto de captação identificado: "
-            f"{codigo_ponto_captacao}"
-        )
+        print(f"Ponto de captação identificado: {codigo_ponto_captacao}")
     else:
         opcoes = []
-
         for p in pontos:
-            descricao = (
-                f"{p['codigo']} - "
-                f"{p['nome'] or 'Sem nome'}"
-            )
-
-            if p["categoria"]:
+            if not p.get("codigo"):
+                continue
+            descricao = f"{p['codigo']} - {p.get('nome') or 'Sem nome'}"
+            if p.get("categoria"):
                 descricao += f" ({p['categoria']})"
-
             if descricao not in opcoes:
                 opcoes.append(descricao)
 
         escolhido = pedir_opcao(
-            "A consulta retornou mais de um ponto de captação. "
+            f"A consulta retornou mais de um ponto para {cliente_escolhido}. "
             "Selecione o ponto correspondente aos relatórios:",
             opcoes
         )
-
         codigo_ponto_captacao = escolhido.split(" - ")[0]
 
-    # Geração do XML.
     arquivo_xml = gerar_xml(
-        ws,
-        cliente_escolhido,
-        selecionados,
-        codigo_sac,
-        cevs,
-        codigo_ponto_captacao,
-        ano,
-        semestre,
-        data_preenchimento,
-        rt,
-        cargo
+        ws, cliente_escolhido, selecionados, codigo_sac, cevs,
+        codigo_ponto_captacao, ano, semestre, data_preenchimento, rt, cargo
     )
 
-    # Envio do XML ao SISAGUA.
     if arquivo_xml is None:
-        print("\nGeração cancelada. XML não enviado.")
+        raise RuntimeError("Geração do XML cancelada; envio não realizado.")
+
+    envio_confirmado = enviar_xml(arquivo_xml, usuario, senha)
+    if not envio_confirmado:
+        raise RuntimeError(
+            "O SISAGUA não confirmou o recebimento do XML. PDF não baixado."
+        )
+
+    baixar_relatorio_sisagua(
+        cliente_escolhido, ano, semestre,
+        nome_estabelecimento, perfil_sisagua, usuario, senha
+    )
+    return "ENVIADO E PDF BAIXADO"
+
+
+def main():
+    if not ARQUIVO_EXCEL.exists():
+        raise FileNotFoundError(
+            f"Não encontrei {ARQUIVO_EXCEL.name}. "
+            "Deixe o script na mesma pasta da planilha."
+        )
+
+    wb = load_workbook(ARQUIVO_EXCEL, data_only=True)
+
+    for aba in (ABA_LABB, ABA_RTS):
+        if aba not in wb.sheetnames:
+            raise ValueError(f"A aba {aba!r} não existe na planilha.")
+
+    ws = wb[ABA_LABB]
+    ws_rts = wb[ABA_RTS]
+
+    lote = listar_relatorios(ws)
+    total_clientes = len(lote)
+    resultados = []
+
+    # Mantém o período solicitado para este processamento em lote.
+    ano = "2026"
+    semestre = "2"
+    data_preenchimento = date.today().strftime("%d/%m/%Y")
+
+    print("\nCONFIGURAÇÃO DO LOTE")
+    print(f"Ano de referência: {ano}")
+    print(f"Semestre: {semestre}")
+    print(f"Data de preenchimento: {data_preenchimento}")
+    print(f"Clientes selecionados: {total_clientes}")
+
+    confirmar = input(
+        "\nConfirma o processamento completo (XML, envio e PDF) "
+        "para os clientes selecionados? (S/N): "
+    ).strip().upper()
+    if confirmar != "S":
+        print("Processamento cancelado pelo usuário.")
         return
 
-    # Envia o XML e, somente se aceito, gera o PDF.
-    envio_confirmado = enviar_xml(
-        arquivo_xml,
-        usuario,
-        senha
-    )
+    for indice, (cliente, selecionados) in enumerate(lote, 1):
+        print(f"\n\n### CLIENTE {indice} DE {total_clientes} ###")
+        try:
+            status = processar_cliente(
+                wb, ws, ws_rts, cliente, selecionados,
+                ano, semestre, data_preenchimento
+            )
+            resultados.append((cliente, status))
+            print(f"\nCONCLUÍDO: {cliente} — {status}")
 
-    if envio_confirmado:
-        baixar_relatorio_sisagua(
-            cliente_escolhido,
-            ano,
-            semestre,
-            nome_estabelecimento,
-            perfil_sisagua,
-            usuario,
-            senha
-        )
-    else:
-        print(
-            "\nO PDF não será gerado porque o SISAGUA "
-            "não confirmou o envio do XML."
-        )
+        except Exception as erro:
+            resultados.append((cliente, f"ERRO: {type(erro).__name__}: {erro}"))
+            print(f"\nFALHA NO CLIENTE {cliente}: {erro}")
+            print("O lote continuará com o próximo cliente.")
 
+    print("\n" + "=" * 70)
+    print("RESUMO FINAL DO LOTE")
+    print("=" * 70)
+    for cliente, status in resultados:
+        print(f"- {cliente}: {status}")
+
+    concluidos = sum(1 for _, s in resultados if s == "ENVIADO E PDF BAIXADO")
+    falhas = len(resultados) - concluidos
+    print(f"\nTotal: {len(resultados)} | Concluídos: {concluidos} | "
+          f"Com falha: {falhas}")
 
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as erro:
-        print(f"\nERRO: {erro}")
+        print(f"\nERRO FATAL: {erro}")
 
     input("\nPressione ENTER para fechar...")
