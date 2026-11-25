@@ -685,7 +685,7 @@ def enviar_xml(arquivo_xml, usuario, senha):
     try:
         with urllib.request.urlopen(
             requisicao,
-            timeout=60
+            timeout=180
         ) as resposta:
 
             tempo_ate_resposta = time.perf_counter()
@@ -717,6 +717,16 @@ def enviar_xml(arquivo_xml, usuario, senha):
         raise RuntimeError(
             f"Erro HTTP {erro.code} no envio:\n{detalhe}"
         )
+
+    except TimeoutError as erro:
+        tempo_decorrido = time.perf_counter() - inicio_envio
+        raise RuntimeError(
+            "Tempo limite de 180 segundos excedido durante a comunicação "
+            "com o SISAGUA. O servidor pode ter recebido o XML e não ter "
+            "conseguido retornar a confirmação. Antes de tentar novamente, "
+            "verifique no SISAGUA se o lançamento foi registrado. "
+            f"Tempo decorrido: {tempo_decorrido:.2f} segundos."
+        ) from erro
 
     except urllib.error.URLError as erro:
         raise RuntimeError(
